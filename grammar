@@ -1,1 +1,152 @@
 
+
+
+stmt: (_simple_stmt | _compound_stmt)* NEWLINE
+
+_simple_stmt: _small_stmt
+
+_small_stmt: assignment_stmt | flow_stmt | print_stmt | declare_stmt | return_stmt 
+
+assignment_stmt: name "🟰" exp
+
+declare_stmt: "decl" (_multipleassignment_stmt | name) ("📎" (_multipleassignment_stmt | name))*
+
+flow_stmt: break_stmt | continue_stmt
+
+break_stmt: "🚦"
+
+continue_stmt: "💆"
+
+return_stmt: '🪃' [testlist]
+
+print_stmt: "print" "🫷" ("\"✍️[A-za-z0-9-_\]✍️"\"" | exp) "🫸" 
+
+_compound_stmt: if_stmt | while_stmt | for_stmt | function_def |class_def
+
+if_stmt: "❓" "🫷" exp "🫸" "{" suite "}" ("❓❗" "🫷" exp "🫸"  "{" suite "}")* ("❗❗" "{" suite "}")?
+
+
+while_stmt: "🌪️" "🫷" for_test "🫸" "{" suite "}"
+
+##### TO ZLE - DO POPRAW DLA PYTHON
+for_stmt: "🎁" "🫷" for_decl ";" for_test";" for_updates "🫸" "{" suite "}"
+
+for_decl: (declare_stmt | assignment_stmt)?
+
+for_test: exp?
+
+for_updates: _multipleassignment_stmt?
+
+_multipleassignment_stmt: assignment_stmt ("📎" assignment_stmt)?
+
+suite: (_simple_stmt | _compound_stmt)* NEWLINE
+
+function_def: "💡" NAME "🫷" [parameters] "🫸" ['->' test] "🖇️" suite
+
+parameters: parameter ("📎" parameter)* ["📎" [ '*' [parameter] ("📎" parameter)* ["📎" '**' parameter] | '**' parameter ] ]
+
+parameter: NAME ["🖇️" test]
+
+class_def: 'class' NAME ["🫷" [arglist] "🫸"] [inheritance] "🖇️" suite
+
+arglist: argument ("📎" argument)*  ["📎"]
+
+inheritance: "🫷" testlist "🫸"
+
+argument: ( test [comp_for] |
+            test "🟰" test | # For keyword arguments
+            '**' test | # For keyword arguments
+            '*' test ) # For positional arguments
+
+lambda_exp: "🌈" [parameters] "🖇️" test
+
+ry_stmt: "🔮" "🖇️" suite (except_clause ["❗❗" "🖇️" suite] [FINALLY "🖇️" suite] | FINALLY "🖇️" suite)
+
+except_clause: "🎣" [exception_as] "🖇️" suite
+
+exception_as: 'as' NAME
+
+raise_stmt: "🌅" [test ["🚛" test ["🌅" test]]]
+
+import_stmt: "🌎" module_name
+
+from_stmt: "🚛" module_name "🌎" import_list
+
+module_name: NAME ('.' NAME)*
+
+import_list: import_name ("📎" import_name)* ["📎"]
+
+import_name: NAME [AS NAME]
+
+
+
+?castexpression: (_unaryoperator?)_argument
+
+?multiplicativeexpression: castexpression (("✖️"|"➗"|EMOD) castexpression)*
+
+?additiveexpression: multiplicativeexpression (("➕"|"➖") multiplicativeexpression)*
+
+?equalityexpression: additiveexpression ((EEQU|ENOTEQ|ELESS|EGREA|EGREAE|ELESSE) additiveexpression)*
+
+?andexpression: equalityexpression (("👭") equalityexpression)*
+
+
+
+?inclusiveorexpression: exclusiveorexpression (("🕵️‍♀️") exclusiveorexpression)*
+
+
+
+exp: logicalorexpression
+
+
+
+
+
+
+_unaryoperator: (ENOT|ECOMPLEMENT)
+
+_argument: boolean | number | name |("(" exp ")")
+
+
+
+##### CZY TO MUSI TU TEŻ BYĆ???????????? ###########
+boolean: ETRUE | EFALSE
+name: /[a-zA-z_][a-zA-Z0-9_]*/
+string: ESCAPED_STRING
+
+%import common.SIGNED_NUMBER
+%import common.WS
+%import common.NEWLINE
+%import common.ESCAPED_STRING
+number: SIGNED_NUMBER
+ETRUE: "true"
+EFALSE: "false"
+EIF: "if"
+EELIF: "elif"
+EELSE: "else"
+EPLUS: "+"
+EMINUS: "-"
+EMULT: "*"
+EDIVIDE: "/"
+ELESS: "<"
+EGREA: ">"
+EEQU: "=="
+EGREAE: ">="
+ELESSE: "<="
+ENOTEQ: "!="
+
+EAND: "&"
+EOR: "|"
+EXOR: "xor"|"^"
+ENOT: "not"|"!"
+EIN: "in"|"<-"
+ENOTIN: "not in"|"<->"
+EMOD: "%"| "mod"
+ELOR: "or"|"||"
+ELAND: "and"|"&&"
+ECOMPLEMENT: "~"
+COMMENT: "#" /[^\n]/*
+
+
+%ignore WS
+%ignore COMMENT
