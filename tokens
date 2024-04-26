@@ -1,1 +1,46 @@
+**Token List: **
 
+    "IDENTIFIER" : 🔠[A-Za-z]+[A-za-z0-9]*🔠,         # Identifiers (variables, function names, etc.)
+    "NUMBER"     : 🔠[0-9]+🔠,                        # Numeric literals
+    "STRING"     : ✍️[A-za-z0-9-_\]✍️,                # String literals
+    "NEWLINE",      # Newline tokens
+    "INDENT",       # Indentation tokens
+    "DEDENT",       # Dedentation tokens
+    "ENDMARKER",    # End of input marker
+    "PLUS",         # Addition operator
+    "MINUS",        # Subtraction operator
+    "STAR",         # Multiplication operator
+    "SLASH",        # Division operator
+    "EQUAL",        # Assignment operator
+    "LPAR",         # Left parenthesis
+    "RPAR",         # Right parenthesis
+    "LSQB",         # Left square bracket
+    "RSQB",         # Right square bracket
+    "COLON",        # Colon
+    "COMMA",        # Comma
+    "SEMI",         # Semicolon
+    "PLUS_EQUAL",   # Plus equals operator (+=)
+    "MINUS_EQUAL",  # Minus equals operator (-=)
+    "STAR_EQUAL",   # Star equals operator (*=)
+    "SLASH_EQUAL",  # Slash equals operator (/=)
+    "VBAR",         # Vertical bar (|)
+    "VBAR_EQUAL",   # Vertical bar equals operator (|=)
+    "AMPER",        # Ampersand (&)
+    "AMPER_EQUAL",  # Ampersand equals operator (&=)
+    "CIRCUMFLEX",   # Circumflex (^)
+    "CIRCUMFLEX_EQUAL",  # Circumflex equals operator (^=)
+    "PERCENT",      # Percent (%)
+    "PERCENT_EQUAL",    # Percent equals operator (%=)
+    "LEFT_SHIFT",       # Left shift (<<)
+    "RIGHT_SHIFT",      # Right shift (>>)
+    "LEFT_SHIFT_EQUAL", # Left shift equals operator (<<=)
+    "RIGHT_SHIFT_EQUAL",    # Right shift equals operator (>>=)
+    "DOUBLE_STAR",      # Double star (**)
+    "DOUBLE_STAR_EQUAL",    # Double star equals operator (**=)
+    "DOUBLE_SLASH",     # Double slash (//)
+    "DOUBLE_SLASH_EQUAL",   # Double slash equals operator (//=)
+    "AT",           # At (@)
+    "RARROW",       # Right arrow (->)
+    "ELLIPSIS",     # Ellipsis (...)
+    "OP",           # Generic operator token
+    "COMMENT", 
