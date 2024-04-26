@@ -1,4 +1,4 @@
-**Token List: **
+**Token List:**
 
     "IDENTIFIER" : "🔠[A-Za-z]+[A-za-z0-9]*🔠",         # Identifiers (variables, function names, etc.)
     "NUMBER"     : "🔠[0-9]+🔠",                        # Numeric literals
