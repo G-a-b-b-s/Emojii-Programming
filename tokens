@@ -45,7 +45,7 @@
     "CATCH"      : "🎣",                                 # Catch
     "FINALLY"    : "⌛",                                 # Finally
     "RAISE"      : "🌅",                                 # Raise
-	"CONST"      : "💀",                                 # Constant
+    "CONST"      : "💀",                                 # Constant
     "IMPORT"     : "🌎",                                 # Import
     "FROM"       : "🚛",                                 # From
     "LAMBDA"     : "🌈",                                 # Lambda
