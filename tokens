@@ -1,8 +1,8 @@
 **Token List: **
 
-    "IDENTIFIER" : 🔠[A-Za-z]+[A-za-z0-9]*🔠,         # Identifiers (variables, function names, etc.)
-    "NUMBER"     : 🔠[0-9]+🔠,                        # Numeric literals
-    "STRING"     : ✍️[A-za-z0-9-_\]✍️,                # String literals
+    "IDENTIFIER" : "🔠[A-Za-z]+[A-za-z0-9]*🔠",         # Identifiers (variables, function names, etc.)
+    "NUMBER"     : "🔠[0-9]+🔠",                        # Numeric literals
+    "STRING"     : "✍️[A-za-z0-9-_\]✍️",                # String literals
     "NEWLINE",      # Newline tokens
     "INDENT",       # Indentation tokens
     "DEDENT",       # Dedentation tokens
