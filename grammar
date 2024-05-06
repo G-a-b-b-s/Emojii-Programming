@@ -7,9 +7,9 @@ _simple_stmt: _small_stmt
 
 _small_stmt: assignment_stmt | flow_stmt | print_stmt | declare_stmt | return_stmt 
 
-assignment_stmt: name "🟰" exp
+assignment_stmt: IDENTIFIER "🟰" exp
 
-declare_stmt: "decl" (_multipleassignment_stmt | name) ("📎" (_multipleassignment_stmt | name))*
+declare_stmt: "decl" (_multipleassignment_stmt | IDENTIFIER) ("📎" (_multipleassignment_stmt | IDENTIFIER))*
 
 flow_stmt: break_stmt | continue_stmt
 
@@ -41,13 +41,13 @@ _multipleassignment_stmt: assignment_stmt ("📎" assignment_stmt)?
 
 suite: (_simple_stmt | _compound_stmt)* NEWLINE
 
-function_def: "💡" NAME "🫷" [parameters] "🫸" ['->' test] "🖇️" suite
+function_def: "💡" IDENTIFIER "🫷" [parameters] "🫸" ['->' test] "🖇️" suite
 
 parameters: parameter ("📎" parameter)* ["📎" [ '*' [parameter] ("📎" parameter)* ["📎" '**' parameter] | '**' parameter ] ]
 
-parameter: NAME ["🖇️" test]
+parameter: IDENTIFIER ["🖇️" test]
 
-class_def: 'class' NAME ["🫷" [arglist] "🫸"] [inheritance] "🖇️" suite
+class_def: 'class' IDENTIFIER ["🫷" [arglist] "🫸"] [inheritance] "🖇️" suite
 
 arglist: argument ("📎" argument)*  ["📎"]
 
@@ -64,7 +64,7 @@ ry_stmt: "🔮" "🖇️" suite (except_clause ["❗❗" "🖇️" suite] [FINAL
 
 except_clause: "🎣" [exception_as] "🖇️" suite
 
-exception_as: 'as' NAME
+exception_as: 'as' IDENTIFIER
 
 raise_stmt: "🌅" [test ["🚛" test ["🌅" test]]]
 
@@ -72,11 +72,11 @@ import_stmt: "🌎" module_name
 
 from_stmt: "🚛" module_name "🌎" import_list
 
-module_name: NAME ('.' NAME)*
+module_name: IDENTIFIER ('.' IDENTIFIER)*
 
 import_list: import_name ("📎" import_name)* ["📎"]
 
-import_name: NAME [AS NAME]
+import_name: IDENTIFIER [AS IDENTIFIER]
 
 
 
@@ -105,7 +105,7 @@ exp: logicalorexpression
 
 _unaryoperator: (ENOT|ECOMPLEMENT)
 
-_argument: boolean | number | name |("(" exp ")")
+_argument: boolean | number | IDENTIFIER |("(" exp ")")
 
 
 
