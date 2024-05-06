@@ -16,7 +16,7 @@
     "LSQB"       : "🫲",                                 # Left square bracket
     "RSQB"       : "🫱",                                 # Right square bracket
     "COMMA"      : "📎",                                 # Comma
-    "COMMA"      : "🖇️",                                 # Colon
+    "COLON"      : "🖇️",                                 # Colon
     "SEMI"       : "📌",                                 # Semicolon
     "QUOTE"      : "🎬 "                                 # Quote
     "WS"         : "[ \t\r\n]+",                         # Whitespace
