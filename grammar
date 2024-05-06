@@ -109,44 +109,6 @@ _argument: boolean | number | name |("(" exp ")")
 
 
 
-##### CZY TO MUSI TU TEŻ BYĆ???????????? ###########
-boolean: ETRUE | EFALSE
-name: /[a-zA-z_][a-zA-Z0-9_]*/
-string: ESCAPED_STRING
-
-%import common.SIGNED_NUMBER
-%import common.WS
-%import common.NEWLINE
-%import common.ESCAPED_STRING
-number: SIGNED_NUMBER
-ETRUE: "true"
-EFALSE: "false"
-EIF: "if"
-EELIF: "elif"
-EELSE: "else"
-EPLUS: "+"
-EMINUS: "-"
-EMULT: "*"
-EDIVIDE: "/"
-ELESS: "<"
-EGREA: ">"
-EEQU: "=="
-EGREAE: ">="
-ELESSE: "<="
-ENOTEQ: "!="
-
-EAND: "&"
-EOR: "|"
-EXOR: "xor"|"^"
-ENOT: "not"|"!"
-EIN: "in"|"<-"
-ENOTIN: "not in"|"<->"
-EMOD: "%"| "mod"
-ELOR: "or"|"||"
-ELAND: "and"|"&&"
-ECOMPLEMENT: "~"
-COMMENT: "#" /[^\n]/*
 
 
-%ignore WS
-%ignore COMMENT
+
