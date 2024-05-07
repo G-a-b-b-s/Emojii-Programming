@@ -97,17 +97,12 @@ import_name: IDENTIFIER [AS IDENTIFIER]
 
 
 exp: logicalorexpression
-
-
-
-
-
-
 _unaryoperator: (ENOT|ECOMPLEMENT)
 
-_argument: boolean | number | IDENTIFIER |("(" exp ")")
+##### CZY TU MAM DAC TE ZNAKI DLA NUMBER I IDENTIFIER CZY TAM TO ZAPISAC?
+_argument: boolean | NUMBER | IDENTIFIER |("(" exp ")")
 
-
+boolean: 👍 | 👎
 
 
 
