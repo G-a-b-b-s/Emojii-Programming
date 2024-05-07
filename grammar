@@ -41,24 +41,25 @@ _multipleassignment_stmt: assignment_stmt ("📎" assignment_stmt)?
 
 suite: (_simple_stmt | _compound_stmt)* NEWLINE
 
-function_def: "💡" IDENTIFIER "🫷" [parameters] "🫸" ['->' test] "🖇️" suite
+function_def: "💡" IDENTIFIER "🫷" [parameters] "🫸" ['->' ] "🖇️" suite
 
-parameters: parameter ("📎" parameter)* ["📎" [ '*' [parameter] ("📎" parameter)* ["📎" '**' parameter] | '**' parameter ] ]
+parameters: parameter ("📎" parameter)* ####chyba bez tego dalej  ##-> ["📎" [ '*' [parameter] ("📎" parameter)* ["📎" '**' parameter] | '**' parameter ] ]
 
-parameter: IDENTIFIER ["🖇️" test]
+parameter: IDENTIFIER ["🖇️" exp]
 
 class_def: 'class' IDENTIFIER ["🫷" [arglist] "🫸"] [inheritance] "🖇️" suite
 
-arglist: argument ("📎" argument)*  ["📎"]
+arglist: _argument ("📎" _argument)*  ["📎"]
 
 inheritance: "🫷" testlist "🫸"
-
-argument: ( test [comp_for] |
-            test "🟰" test | # For keyword arguments
-            '**' test | # For keyword arguments
-            '*' test ) # For positional arguments
-
-lambda_exp: "🌈" [parameters] "🖇️" test
+testlist: exp ("," exp)*
+``` to zastapilam na dole ale idk czy wystarczy
+argument: ( exp [comp_for] |
+            exp "🟰" exp | # For keyword arguments
+            '**' exp | # For keyword arguments
+            '*' exp ) # For positional arguments
+```
+lambda_exp: "🌈" [parameters] "🖇️" exp
 
 ry_stmt: "🔮" "🖇️" suite (except_clause ["❗❗" "🖇️" suite] [FINALLY "🖇️" suite] | FINALLY "🖇️" suite)
 
@@ -66,7 +67,7 @@ except_clause: "🎣" [exception_as] "🖇️" suite
 
 exception_as: 'as' IDENTIFIER
 
-raise_stmt: "🌅" [test ["🚛" test ["🌅" test]]]
+raise_stmt: "🌅" [exp ["🚛" exp ["🌅" exp]]]
 
 import_stmt: "🌎" module_name
 
