@@ -52,4 +52,5 @@
     "FROM"       : "🚛",                                 # From
     "LAMBDA"     : "🌈",                                 # Lambda
     "NONE"       : "🗑️",                                 # None
-    "ECOMPLEMENT": "〰",                                  #Complement
+    "ECOMPLEMENT": "〰",                                  # Complement
+    "ARROW"      : "->",                                  # Arrow
