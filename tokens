@@ -10,7 +10,8 @@
     "MINUS"      : "➖",                                 # Subtraction operator
     "MULTIPLY"   : "✖️",                                 # Multiplication operator
     "DIVIDE"     : "➗",                                 # Division operator
-    "EQUAL"      : "🟰",                                 # Assignment operator
+    "EQUAL"      : "🟰",                                 # Assignment operator 
+    "MOD"       : "%",                                   # Modulo
     "LPAR"       : "🫷",                                 # Left parenthesis
     "RPAR"       : "🫸",                                 # Right parenthesis
     "LSQB"       : "🫲",                                 # Left square bracket
@@ -51,3 +52,4 @@
     "FROM"       : "🚛",                                 # From
     "LAMBDA"     : "🌈",                                 # Lambda
     "NONE"       : "🗑️",                                 # None
+    "ECOMPLEMENT": "〰",                                  #Complement
