@@ -24,6 +24,7 @@
     "AND"        : "👭",                                 # And (&& in other programming languages)
     "PERCENT"    : "🍾",                                 # Percent (%)
     "COMMENT"    : "☁️[A-Za-z0-9_/-*]*☁️",               # Commment
+    "PRINT"      : "🖨️",                                 # Print
     "NOT"        : "❗",                                 # Not
     "IF"         : "❓",                                 # If
     "ELSE"       : "❗❗",                               # Else
