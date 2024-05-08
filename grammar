@@ -19,46 +19,43 @@ print_stmt: "PRINT" "LPAR" ("QUOTE" "STRING" "QUOTE" | _argument | exp ) "RPAR"
 
 _compound_stmt: if_stmt | while_stmt | for_stmt | function_def |class_def
 
-if_stmt: "IF" "LPAR" exp "RPAR" "{" suite "}" ("ELSIF" "LPAR" exp "RPAR"  "{" suite "}")* ("ELSE" "{" suite "}")?
+if_stmt: "IF" "LPAR" exp "RPAR" "{" stmt "}" ("ELSIF" "LPAR" exp "RPAR"  "{" stmt "}")* ("ELSE" "{" stmt "}")?
 
 
-while_stmt: "WHILE" "LPAR" for_test "RPAR" "{" suite "}"
+while_stmt: "WHILE" "LPAR" for_test "RPAR" "{" stmt "}"
 
-for_stmt: "FOR" "IDENTIFIER" "IN" "RANGE" "LPAR" "NUMBER" "RPAR"  "{" suite "}"
 
-for_decl: (declare_stmt | assignment_stmt)?
+for_stmt: "FOR" "IDENTIFIER" "IN" "RANGE" "LPAR" "NUMBER" "RPAR"  "{" stmt "}"
+
 
 for_test: exp?
 
-for_updates: _multipleassignment_stmt?
+
 
 _multipleassignment_stmt: assignment_stmt ("COMMA" assignment_stmt)?
 
-suite: (_simple_stmt | _compound_stmt)* NEWLINE
 
-function_def:  "DEF" IDENTIFIER "LPAR" [parameters] "RPAR" ["ARROW" ] "COLON" suite
+function_def:  "DEF" IDENTIFIER "LPAR" [parameters] "RPAR" ["ARROW" ] "COLON" NEWLINE stmt
 
 parameters: parameter ("COMMA" parameter)* 
 
 parameter: IDENTIFIER ["COLON" exp]
 
-class_def: 'class' IDENTIFIER ["LPAR" [arglist] "RPAR"] [inheritance] "COLON" suite
+class_def: 'class' IDENTIFIER ["LPAR" [arglist] "RPAR"] [inheritance] "COLON" stmt
 
 arglist: _argument ("COLON" _argument)*
 
 inheritance: "LPAR" testlist "RPAR"
-testlist: exp ("," exp)*
 
-argument: ( exp [comp_for] |
-            exp "EQUAL" exp | # For keyword arguments
-            '**' exp | # For keyword arguments
-            '*' exp ) # For positional arguments
+testlist: exp ("COMMA" exp)*
+
+
 
 lambda_exp: "LAMBDA" [parameters] "COLON" exp
 
-try_stmt: "TRY" "COLON" suite (except_clause ["ELSE" "COLON" suite] [FINALLY "COLON" suite] | FINALLY "COLON" suite)
+try_stmt: "TRY" "COLON" stmt (except_clause ["ELSE" "COLON" stmt] [FINALLY "COLON" stmt] | FINALLY "COLON" stmt)
 
-except_clause: "CATCH" [exception_as] "COLON" suite
+except_clause: "CATCH" [exception_as] "COLON" stmt
 
 exception_as: 'as' IDENTIFIER
 
@@ -88,11 +85,23 @@ import_name: IDENTIFIER [AS IDENTIFIER]
 
 ?inclusiveorexpression: exclusiveorexpression (("OR") exclusiveorexpression)*
 
-exp: logicalorexpression
+
+exp : primary ((PLUS | MINUS | STAR | SLASH | AMPERSAND | LESS | GREATER | PERCENT | EQEQUAL | NOTEQUAL | LESSEQUAL | GREATEREQUAL | PLUSEQUAL | MINEQUAL | STAREQUAL | SLASHEQUAL | PERCENTEQUAL) primary)*;
+
+primary : IDENTIFIER
+        | NUMBER
+        | STRING
+        | LPAR expression CLOSE_PAREN
+        | "{" testlist "}"
+        | "{" expression "}"
+        | function_call
+
+function_call : IDENTIFIER "LPAR" testlist? "RPAR"
+
 _unaryoperator: (NOT|ECOMPLEMENT)
-_argument: boolean | NUMBER | IDENTIFIER |("(" exp ")")
+_argument: boolean |("LPAR" exp "RPAR")
 
 boolean: "TRUE" | "FALSE"
 
-
+NEWLINE: '\n'
 
