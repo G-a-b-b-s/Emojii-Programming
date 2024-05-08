@@ -13,9 +13,9 @@ declare_stmt: "decl" (_multipleassignment_stmt | IDENTIFIER) ("COMMA" (_multiple
 
 flow_stmt: "BREAK" | "CONTINUE"
 
-return_stmt: "RETURN" [testlist]
+return_stmt: "RETURN" [explist]
 
-print_stmt: "PRINT" "LPAR" ("QUOTE" "STRING" "QUOTE" | _argument | exp ) "RPAR" 
+print_stmt: "PRINT" "LPAR" ("QUOTE" "STRING" "QUOTE" | exp ) "RPAR" 
 
 _compound_stmt: if_stmt | while_stmt | for_stmt | function_def |class_def
 
@@ -41,13 +41,13 @@ parameters: parameter ("COMMA" parameter)*
 
 parameter: IDENTIFIER ["COLON" exp]
 
-class_def: 'class' IDENTIFIER ["LPAR" [arglist] "RPAR"] [inheritance] "COLON" stmt
+class_def: 'class' IDENTIFIER ["LPAR" [explist] "RPAR"] [inheritance] "COLON" stmt
 
-arglist: _argument ("COLON" _argument)*
+# arglist: _argument ("COLON" _argument)*
 
-inheritance: "LPAR" testlist "RPAR"
+inheritance: "LPAR" explist "RPAR"
 
-testlist: exp ("COMMA" exp)*
+explist: exp ("COMMA" exp)*
 
 
 
@@ -92,11 +92,11 @@ primary : IDENTIFIER
         | NUMBER
         | STRING
         | LPAR expression CLOSE_PAREN
-        | "{" testlist "}"
+        | "{" explist "}"
         | "{" expression "}"
         | function_call
 
-function_call : IDENTIFIER "LPAR" testlist? "RPAR"
+function_call : IDENTIFIER "LPAR" explist? "RPAR"
 
 _unaryoperator: (NOT|ECOMPLEMENT)
 _argument: boolean |("LPAR" exp "RPAR")
