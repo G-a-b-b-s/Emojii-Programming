@@ -7,29 +7,24 @@ _simple_stmt: _small_stmt
 
 _small_stmt: assignment_stmt | flow_stmt | print_stmt | declare_stmt | return_stmt 
 
-assignment_stmt: IDENTIFIER "🟰" exp
+assignment_stmt: IDENTIFIER "EQUAL" exp
 
-declare_stmt: "decl" (_multipleassignment_stmt | IDENTIFIER) ("📎" (_multipleassignment_stmt | IDENTIFIER))*
+declare_stmt: "decl" (_multipleassignment_stmt | IDENTIFIER) ("COMMA" (_multipleassignment_stmt | IDENTIFIER))*
 
-flow_stmt: break_stmt | continue_stmt
+flow_stmt: "BREAK" | "CONTINUE"
 
-break_stmt: "🚦"
+return_stmt: "RETURN" [testlist]
 
-continue_stmt: "💆"
-
-return_stmt: '🪃' [testlist]
-
-print_stmt: "print" "🫷" ("\"✍️[A-za-z0-9-_\]✍️"\"" | exp) "🫸" 
+print_stmt: "PRINT" "LPAR" ("QUOTE" "STRING" "QUOTE" | _argument | exp ) "RPAR" 
 
 _compound_stmt: if_stmt | while_stmt | for_stmt | function_def |class_def
 
-if_stmt: "❓" "🫷" exp "🫸" "{" suite "}" ("❓❗" "🫷" exp "🫸"  "{" suite "}")* ("❗❗" "{" suite "}")?
+if_stmt: "IF" "LPAR" exp "RPAR" "{" suite "}" ("ELSIF" "LPAR" exp "RPAR"  "{" suite "}")* ("ELSE" "{" suite "}")?
 
 
-while_stmt: "🌪️" "🫷" for_test "🫸" "{" suite "}"
+while_stmt: "WHILE" "LPAR" for_test "RPAR" "{" suite "}"
 
-##### TO ZLE - DO POPRAW DLA PYTHON
-for_stmt: "🎁" "🫷" for_decl ";" for_test";" for_updates "🫸" "{" suite "}"
+for_stmt: "FOR" "IDENTIFIER" "IN" "RANGE" "LPAR" "NUMBER" "RPAR"  "{" suite "}"
 
 for_decl: (declare_stmt | assignment_stmt)?
 
@@ -37,45 +32,45 @@ for_test: exp?
 
 for_updates: _multipleassignment_stmt?
 
-_multipleassignment_stmt: assignment_stmt ("📎" assignment_stmt)?
+_multipleassignment_stmt: assignment_stmt ("COMMA" assignment_stmt)?
 
 suite: (_simple_stmt | _compound_stmt)* NEWLINE
 
-function_def: "💡" IDENTIFIER "🫷" [parameters] "🫸" ['->' ] "🖇️" suite
+function_def:  "DEF" IDENTIFIER "LPAR" [parameters] "RPAR" ["ARROW" ] "COLON" suite
 
-parameters: parameter ("📎" parameter)* ####chyba bez tego dalej  ##-> ["📎" [ '*' [parameter] ("📎" parameter)* ["📎" '**' parameter] | '**' parameter ] ]
+parameters: parameter ("COMMA" parameter)* 
 
-parameter: IDENTIFIER ["🖇️" exp]
+parameter: IDENTIFIER ["COLON" exp]
 
-class_def: 'class' IDENTIFIER ["🫷" [arglist] "🫸"] [inheritance] "🖇️" suite
+class_def: 'class' IDENTIFIER ["LPAR" [arglist] "RPAR"] [inheritance] "COLON" suite
 
-arglist: _argument ("📎" _argument)*  ["📎"]
+arglist: _argument ("COLON" _argument)*
 
-inheritance: "🫷" testlist "🫸"
+inheritance: "LPAR" testlist "RPAR"
 testlist: exp ("," exp)*
-``` to zastapilam na dole ale idk czy wystarczy
+
 argument: ( exp [comp_for] |
-            exp "🟰" exp | # For keyword arguments
+            exp "EQUAL" exp | # For keyword arguments
             '**' exp | # For keyword arguments
             '*' exp ) # For positional arguments
-```
-lambda_exp: "🌈" [parameters] "🖇️" exp
 
-ry_stmt: "🔮" "🖇️" suite (except_clause ["❗❗" "🖇️" suite] [FINALLY "🖇️" suite] | FINALLY "🖇️" suite)
+lambda_exp: "LAMBDA" [parameters] "COLON" exp
 
-except_clause: "🎣" [exception_as] "🖇️" suite
+try_stmt: "TRY" "COLON" suite (except_clause ["ELSE" "COLON" suite] [FINALLY "COLON" suite] | FINALLY "COLON" suite)
+
+except_clause: "CATCH" [exception_as] "COLON" suite
 
 exception_as: 'as' IDENTIFIER
 
-raise_stmt: "🌅" [exp ["🚛" exp ["🌅" exp]]]
+raise_stmt: "RAISE" [exp ["FROM" exp ["RAISE" exp]]]
 
-import_stmt: "🌎" module_name
+import_stmt: "IMPORT" module_name
 
-from_stmt: "🚛" module_name "🌎" import_list
+from_stmt: "FROM" module_name "IMPORT" import_list
 
 module_name: IDENTIFIER ('.' IDENTIFIER)*
 
-import_list: import_name ("📎" import_name)* ["📎"]
+import_list: import_name ("COLON" import_name)* 
 
 import_name: IDENTIFIER [AS IDENTIFIER]
 
@@ -83,30 +78,21 @@ import_name: IDENTIFIER [AS IDENTIFIER]
 
 ?castexpression: (_unaryoperator?)_argument
 
-?multiplicativeexpression: castexpression (("✖️"|"➗"|EMOD) castexpression)*
+?multiplicativeexpression: castexpression (("MULTIPLY"|"DIVIDE"|MOD) castexpression)*
 
-?additiveexpression: multiplicativeexpression (("➕"|"➖") multiplicativeexpression)*
+?additiveexpression: multiplicativeexpression (("PLUS"|"MINU") multiplicativeexpression)*
 
 ?equalityexpression: additiveexpression ((EEQU|ENOTEQ|ELESS|EGREA|EGREAE|ELESSE) additiveexpression)*
 
-?andexpression: equalityexpression (("👭") equalityexpression)*
+?andexpression: equalityexpression (("AND") equalityexpression)*
 
-
-
-?inclusiveorexpression: exclusiveorexpression (("🕵️‍♀️") exclusiveorexpression)*
-
-
+?inclusiveorexpression: exclusiveorexpression (("OR") exclusiveorexpression)*
 
 exp: logicalorexpression
-_unaryoperator: (ENOT|ECOMPLEMENT)
-
-##### CZY TU MAM DAC TE ZNAKI DLA NUMBER I IDENTIFIER CZY TAM TO ZAPISAC?
+_unaryoperator: (NOT|ECOMPLEMENT)
 _argument: boolean | NUMBER | IDENTIFIER |("(" exp ")")
 
-boolean: 👍 | 👎
+boolean: "TRUE" | "FALSE"
 
-ECOMPLEMENT: "〰"
-ENOT: "❗"
-EMOD: "%"| "mod"
 
 
