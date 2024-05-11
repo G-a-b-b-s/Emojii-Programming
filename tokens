@@ -11,6 +11,10 @@
     "MULTIPLY"   : "✖️",                                 # Multiplication operator
     "DIVIDE"     : "➗",                                 # Division operator
     "EQUAL"      : "🟰",                                 # Assignment operator 
+    "GREATER"    : ">",                                   # Greater operator
+    "SMALLER"    : "<",                                   # Smaller operator
+    "EGREATER"   : "=>",                                  # GreaterOrEqual operator
+    "ESMALLER"   : "<=",                                  # SmallerOrEqual operator
     "MOD"       : "%",                                   # Modulo
     "LPAR"       : "🫷",                                 # Left parenthesis
     "RPAR"       : "🫸",                                 # Right parenthesis
