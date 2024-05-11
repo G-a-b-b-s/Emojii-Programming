@@ -25,7 +25,7 @@ import_name: IDENTIFIER [AS IDENTIFIER]?
 
 stmt: (_simple_stmt | _compound_stmt)* NEWLINE
 
-_simple_stmt: assignment_stmt | declare_stmt | print_stmt | _multipleassignment_stmt | lambda_stmt | try_stmt | raise_stmt | logical_stmt
+_simple_stmt: assignment_stmt | declare_stmt | print_stmt | _multipleassignment_stmt | lambda_stmt | try_stmt | raise_stmt | logical_stmt | equality_exp
 
 assignment_stmt: IDENTIFIER "EQUAL" exp
 
@@ -78,35 +78,42 @@ explist: exp ("COMMA" exp)*
 boolean: "TRUE" | "FALSE"
 
 
-#Logical statements 
+#Logical expression
 
-logical_stmt: and_stmt | inclusive_or_stmt | equality_expression
+logical_exp: and_exp | or_exp | equality_exp
 
-and_stmt : equalityexpression (AND" equalityexpression)+  # at least one AND
+#Math expression 
 
-inclusive_or_stmt : equalityexpression ("OR" equalityexpression)+
+math_exp : add_exp | minus_exp | mult_exp | divide_exp |cast_exp
 
-equalityexpression : math_exp [("EQUAL""EQUAL"|"GREATER"|"SMALLER"|"EGREATER"| "ESMALLER") math_exp]*
+#Compare expression
 
-math_exp: multiplicativeexpression (("PLUS"|"MINUS") multiplicativeexpression)*
+comp_exp : greater_exp | greater_equal_exp | smaller_exp | smaller_equal_exp 
 
-multiplicativeexpression: castexpression (("MULTIPLY"|"DIVIDE"|MOD) castexpression)*
+or_exp : exp( "OR" exp)+
+and_exp : exp ("AND" exp)+
+add_exp : exp ("PLUS" exp)+
+minus_exp : exp ("MINUS" exp)+
+mult_exp : exp ("MULTIPLY" exp)+
+divide_exp : exp ("DIVIDE" exp)+
+greater_exp :  exp ("GREATER" exp)+
+greater_equal_exp :  exp ("EGREATER" exp)+
+smaller_exp :  exp ("SMALLER" exp)+
+smaller_equal_exp :  exp ("ESMALLER" exp)+
+mod_exp : exp ("MOD" exp)+
+equality_exp : exp ("EQUAL" "EQUAL" exp)+
+cast_exp : unary_operator argument
 
-castexpression: (_unaryoperator?)_argument
+# Expressions - important 
 
-_unaryoperator: (NOT|ECOMPLEMENT)
+exp : logical_exp | math_exp | comp_exp | primary 
 
-_argument: boolean |("LPAR" exp "RPAR")
-
-
-exp : primary ((PLUS | MINUS | STAR | SLASH | AMPERSAND | LESS | GREATER | PERCENT | EQEQUAL | NOTEQUAL | LESSEQUAL | GREATEREQUAL | PLUSEQUAL | MINEQUAL | STAREQUAL | SLASHEQUAL | PERCENTEQUAL) primary)*;
+argument: boolean |("LPAR" exp "RPAR")
 
 primary : IDENTIFIER
         | NUMBER
         | STRING
         | LPAR expression CLOSE_PAREN
-        | "{" explist "}"
-        | "{" expression "}"
         | function_call
 
 function_call : IDENTIFIER "LPAR" explist? "RPAR"
