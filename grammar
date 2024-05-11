@@ -25,7 +25,7 @@ import_name: IDENTIFIER [AS IDENTIFIER]?
 
 stmt: (_simple_stmt | _compound_stmt)* NEWLINE
 
-_simple_stmt: assignment_stmt | declare_stmt | print_stmt | _multipleassignment_stmt | lambda_stmt | try_stmt | raise_stmt | logical_stmt | equality_exp
+_simple_stmt: assignment_stmt | declare_stmt | print_stmt | _multipleassignment_stmt | lambda_stmt | try_stmt | raise_stmt | exp
 
 assignment_stmt: IDENTIFIER "EQUAL" exp
 
