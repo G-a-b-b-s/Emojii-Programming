@@ -1,65 +1,14 @@
+**Grammar**
 
 
+#Starting symbol
 
-stmt: (_simple_stmt | _compound_stmt)* NEWLINE
-
-_simple_stmt: _small_stmt
-
-_small_stmt: assignment_stmt | flow_stmt | print_stmt | declare_stmt | return_stmt 
-
-assignment_stmt: IDENTIFIER "EQUAL" exp
-
-declare_stmt: "decl" (_multipleassignment_stmt | IDENTIFIER) ("COMMA" (_multipleassignment_stmt | IDENTIFIER))*
-
-flow_stmt: "BREAK" | "CONTINUE"
-
-return_stmt: "RETURN" [explist]
-
-print_stmt: "PRINT" "LPAR" ("QUOTE" "STRING" "QUOTE" | exp ) "RPAR" 
-
-_compound_stmt: if_stmt | while_stmt | for_stmt | function_def |class_def
-
-if_stmt: "IF" "LPAR" exp "RPAR" "{" stmt "}" ("ELSIF" "LPAR" exp "RPAR"  "{" stmt "}")* ("ELSE" "{" stmt "}")?
+start : (beginning_import_stm)?  stmt
 
 
-while_stmt: "WHILE" "LPAR" for_test "RPAR" "{" stmt "}"
+#Imports
 
-
-for_stmt: "FOR" "IDENTIFIER" "IN" "RANGE" "LPAR" "NUMBER" "RPAR"  "{" stmt "}"
-
-
-for_test: exp?
-
-
-
-_multipleassignment_stmt: assignment_stmt ("COMMA" assignment_stmt)?
-
-
-function_def:  "DEF" IDENTIFIER "LPAR" [parameters] "RPAR" ["ARROW" ] "COLON" NEWLINE stmt
-
-parameters: parameter ("COMMA" parameter)* 
-
-parameter: IDENTIFIER ["COLON" exp]
-
-class_def: 'class' IDENTIFIER ["LPAR" [explist] "RPAR"] [inheritance] "COLON" stmt
-
-# arglist: _argument ("COLON" _argument)*
-
-inheritance: "LPAR" explist "RPAR"
-
-explist: exp ("COMMA" exp)*
-
-
-
-lambda_exp: "LAMBDA" [parameters] "COLON" exp
-
-try_stmt: "TRY" "COLON" stmt (except_clause ["ELSE" "COLON" stmt] [FINALLY "COLON" stmt] | FINALLY "COLON" stmt)
-
-except_clause: "CATCH" [exception_as] "COLON" stmt
-
-exception_as: 'as' IDENTIFIER
-
-raise_stmt: "RAISE" [exp ["FROM" exp ["RAISE" exp]]]
+beginning_import_stmt : ( import_stmt | from_stmt )*
 
 import_stmt: "IMPORT" module_name
 
@@ -69,21 +18,85 @@ module_name: IDENTIFIER ('.' IDENTIFIER)*
 
 import_list: import_name ("COLON" import_name)* 
 
-import_name: IDENTIFIER [AS IDENTIFIER]
+import_name: IDENTIFIER [AS IDENTIFIER]?
 
 
+#Statements within line
 
-?castexpression: (_unaryoperator?)_argument
+stmt: (_simple_stmt | _compound_stmt)* NEWLINE
 
-?multiplicativeexpression: castexpression (("MULTIPLY"|"DIVIDE"|MOD) castexpression)*
+_simple_stmt: assignment_stmt | declare_stmt | print_stmt | _multipleassignment_stmt | lambda_stmt | try_stmt | raise_stmt | logical_stmt
 
-?additiveexpression: multiplicativeexpression (("PLUS"|"MINU") multiplicativeexpression)*
+assignment_stmt: IDENTIFIER "EQUAL" exp
 
-?equalityexpression: additiveexpression ((EEQU|ENOTEQ|ELESS|EGREA|EGREAE|ELESSE) additiveexpression)*
+declare_stmt: "decl" (_multipleassignment_stmt | IDENTIFIER) ("COMMA" (_multipleassignment_stmt | IDENTIFIER))*
 
-?andexpression: equalityexpression (("AND") equalityexpression)*
+print_stmt: "PRINT" "LPAR" ("QUOTE" "STRING" "QUOTE" | exp ) "RPAR" 
 
-?inclusiveorexpression: exclusiveorexpression (("OR") exclusiveorexpression)*
+_multipleassignment_stmt: assignment_stmt ("COMMA" assignment_stmt)?
+
+lambda_stmt: "LAMBDA" [parameters] "COLON" exp
+
+try_stmt: "TRY" "COLON" stmt (except_clause ["ELSE" "COLON" stmt] [FINALLY "COLON" stmt] | FINALLY "COLON" stmt)
+
+except_clause: "CATCH" [exception_as] "COLON" stmt
+
+exception_as: 'as' IDENTIFIER
+
+raise_stmt: "RAISE" [exp ["FROM" exp ["RAISE" exp]]]
+
+
+#Compound statements
+
+_compound_stmt: if_stmt | while_stmt | for_stmt | function_def
+
+if_stmt: "IF" "LPAR" exp "RPAR" "{" stmt "}" ("ELSIF" "LPAR" exp "RPAR"  "{" stmt "}")* ("ELSE" "{" stmt "}")?
+
+while_stmt: "WHILE" ["BOOLEAN" | "LPAR" logical_stmt "RPAR" ] "COLON" loop_stmt
+
+for_stmt: "FOR" "IDENTIFIER" "IN" "RANGE" "LPAR" "NUMBER" "RPAR"  "COLON" loop_stmt 
+
+function_def:  "DEF" IDENTIFIER "LPAR" [parameters] "RPAR" ["ARROW" IDENTIFIER]? "COLON"  func_body
+
+
+#Fillings for compund statements
+
+loop_stmt: (stmt | flow_stmt )*
+
+func_body : ( loop_stmt | return_stmt )*
+
+flow_stmt: "BREAK" | "CONTINUE"
+
+return_stmt: "RETURN" [explist]?
+
+parameters: parameter ("COMMA" parameter)* 
+
+parameter: IDENTIFIER ["COLON" exp]
+
+explist: exp ("COMMA" exp)*
+
+boolean: "TRUE" | "FALSE"
+
+
+#Logical statements 
+
+logical_stmt: and_stmt | inclusive_or_stmt | equality_expression
+
+and_stmt : equalityexpression (AND" equalityexpression)+  # at least one AND
+
+inclusive_or_stmt : equalityexpression ("OR" equalityexpression)+
+
+equalityexpression : math_exp [("EQUAL""EQUAL"|"GREATER"|"SMALLER"|"EGREATER"| "ESMALLER") math_exp]*
+
+math_exp: multiplicativeexpression (("PLUS"|"MINUS") multiplicativeexpression)*
+
+multiplicativeexpression: castexpression (("MULTIPLY"|"DIVIDE"|MOD) castexpression)*
+
+castexpression: (_unaryoperator?)_argument
+
+_unaryoperator: (NOT|ECOMPLEMENT)
+
+_argument: boolean |("LPAR" exp "RPAR")
 
 
 exp : primary ((PLUS | MINUS | STAR | SLASH | AMPERSAND | LESS | GREATER | PERCENT | EQEQUAL | NOTEQUAL | LESSEQUAL | GREATEREQUAL | PLUSEQUAL | MINEQUAL | STAREQUAL | SLASHEQUAL | PERCENTEQUAL) primary)*;
@@ -98,10 +111,6 @@ primary : IDENTIFIER
 
 function_call : IDENTIFIER "LPAR" explist? "RPAR"
 
-_unaryoperator: (NOT|ECOMPLEMENT)
-_argument: boolean |("LPAR" exp "RPAR")
 
-boolean: "TRUE" | "FALSE"
 
-NEWLINE: '\n'
 
