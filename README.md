@@ -32,7 +32,9 @@ Zidentyfikowane tokeny zostaną zapisane do pliku tokens.txt.
 
 -**Drzewo Parsowania**:
 
-Wynik analizy składniowej (drzewo parsowania) zostanie zapisany do pliku parsing_tree.txt.
+Wynik analizy składniowej (drzewo parsowania) zostanie zapisany do pliku parsing_tree.txt, natomiast wersja dot - w pliku 'dot parsing tree'.
+
+Polecany sposób wizualizacji pliku dot  - https://dreampuf.github.io/GraphvizOnline/
 
 -**Edycja Pliku Testowego**:
 
