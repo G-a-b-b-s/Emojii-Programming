@@ -1,6 +1,7 @@
 grammar Grammar; 
 
-start : stmt+ EOF;
+start : stmt+EOF;
+
 
 IDENTIFIER  : [A-Za-z]+[A-Za-z0-9_]*;
 NUMBER : [0-9]+('.'[0-9]+)?;
