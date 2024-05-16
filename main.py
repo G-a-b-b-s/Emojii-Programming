@@ -1,10 +1,14 @@
 from antlr4 import *
+from graphviz import dot
+
 from Compiler.GrammarLexer import GrammarLexer
 from Compiler.GrammarParser import GrammarParser
 from Compiler.GrammarListener import GrammarListener
 from antlr4.tree.Tree import *
 from antlr4 import ParserRuleContext
 import graphviz
+
+import spacy
 
 
 def print_tokens(lexer):
@@ -78,9 +82,10 @@ def main():
     walker.walk(printer, tree)
     formatted_tree = printer.getFormattedTree()
     print(formatted_tree)
-    with open('parsing_tree.txt', 'w', encoding='utf-8') as file:
+    with open('Results/parsing_tree.txt', 'w', encoding='utf-8') as file:
         file.write(formatted_tree)
-    printer.saveGraph('dot_parsing_tree')
+    printer.saveGraph('Results/dot_parsing_tree')
+
 
 if __name__ == '__main__':
     main()
