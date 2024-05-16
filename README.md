@@ -7,6 +7,10 @@ Celem tego projektu jest stworzenie interpretera języka emotikonowego, który s
 
 ## Narzędzia i Biblioteki
 - ANTLR4: [Oficjalna strona ANTLR4](https://www.antlr.org/)
+  
+- GraphViz https://graphviz.org/
+
+
 
 ## Instalacja i Uruchomienie
 
@@ -32,9 +36,7 @@ Zidentyfikowane tokeny zostaną zapisane do pliku tokens.txt.
 
 -**Drzewo Parsowania**:
 
-Wynik analizy składniowej (drzewo parsowania) zostanie zapisany do pliku parsing_tree.txt, natomiast wersja dot - w pliku 'dot parsing tree'.
-
-Polecany sposób wizualizacji pliku dot  - https://dreampuf.github.io/GraphvizOnline/
+Wynik analizy składniowej (drzewo parsowania) zostanie zapisany w diretory Results, a dokładniej do pliku parsing_tree.txt, natomiast wersja png - w pliku 'dot parsing tree'.
 
 -**Edycja Pliku Testowego**:
 
