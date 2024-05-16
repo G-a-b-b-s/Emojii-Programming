@@ -12,7 +12,7 @@
     "SMALLER"    : "<",                                   # Smaller operator
     "EGREATER"   : "=>",                                  # GreaterOrEqual operator
     "ESMALLER"   : "<=",                                  # SmallerOrEqual operator
-    "MOD"       : "%",                                   # Modulo
+    "MOD"        : "%",                                   # Modulo
     "LPAR"       : "🫷",                                 # Left parenthesis
     "RPAR"       : "🫸",                                 # Right parenthesis
     "LSQB"       : "🫲",                                 # Left square bracket

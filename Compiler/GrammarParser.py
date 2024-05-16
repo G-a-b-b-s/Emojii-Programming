@@ -1,4 +1,4 @@
-# Generated from Grammars/Grammar.g4 by ANTLR 4.13.1
+# Generated from C:/Users/48735/Desktop/Kompilki/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,57,362,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,60,362,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,
@@ -41,7 +41,7 @@ def serializedATN():
         8,37,10,37,12,37,349,9,37,1,38,1,38,1,38,1,38,1,38,1,38,1,38,3,38,
         358,8,38,1,39,1,39,1,39,0,5,62,64,70,72,74,40,0,2,4,6,8,10,12,14,
         16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,
-        60,62,64,66,68,70,72,74,76,78,0,2,1,0,36,37,2,0,1,3,56,56,360,0,
+        60,62,64,66,68,70,72,74,76,78,0,2,1,0,38,39,2,0,3,5,59,59,360,0,
         81,1,0,0,0,2,89,1,0,0,0,4,101,1,0,0,0,6,103,1,0,0,0,8,107,1,0,0,
         0,10,116,1,0,0,0,12,121,1,0,0,0,14,124,1,0,0,0,16,129,1,0,0,0,18,
         137,1,0,0,0,20,145,1,0,0,0,22,150,1,0,0,0,24,155,1,0,0,0,26,160,
@@ -56,80 +56,80 @@ def serializedATN():
         2,0,88,90,3,36,18,0,89,87,1,0,0,0,89,88,1,0,0,0,90,3,1,0,0,0,91,
         102,3,6,3,0,92,102,3,12,6,0,93,102,3,22,11,0,94,102,3,8,4,0,95,102,
         3,26,13,0,96,102,3,28,14,0,97,102,3,60,30,0,98,99,3,60,30,0,99,100,
-        5,18,0,0,100,102,1,0,0,0,101,91,1,0,0,0,101,92,1,0,0,0,101,93,1,
+        5,20,0,0,100,102,1,0,0,0,101,91,1,0,0,0,101,92,1,0,0,0,101,93,1,
         0,0,0,101,94,1,0,0,0,101,95,1,0,0,0,101,96,1,0,0,0,101,97,1,0,0,
-        0,101,98,1,0,0,0,102,5,1,0,0,0,103,104,5,1,0,0,104,105,5,9,0,0,105,
-        106,3,60,30,0,106,7,1,0,0,0,107,108,5,52,0,0,108,113,3,10,5,0,109,
-        110,5,17,0,0,110,112,3,10,5,0,111,109,1,0,0,0,112,115,1,0,0,0,113,
-        111,1,0,0,0,113,114,1,0,0,0,114,9,1,0,0,0,115,113,1,0,0,0,116,119,
-        5,1,0,0,117,118,5,9,0,0,118,120,3,60,30,0,119,117,1,0,0,0,119,120,
-        1,0,0,0,120,11,1,0,0,0,121,122,5,47,0,0,122,123,3,16,8,0,123,13,
-        1,0,0,0,124,125,5,48,0,0,125,126,3,16,8,0,126,127,5,47,0,0,127,128,
-        3,18,9,0,128,15,1,0,0,0,129,134,5,1,0,0,130,131,5,17,0,0,131,133,
-        5,1,0,0,132,130,1,0,0,0,133,136,1,0,0,0,134,132,1,0,0,0,134,135,
-        1,0,0,0,135,17,1,0,0,0,136,134,1,0,0,0,137,142,3,20,10,0,138,139,
-        5,18,0,0,139,141,3,20,10,0,140,138,1,0,0,0,141,144,1,0,0,0,142,140,
-        1,0,0,0,142,143,1,0,0,0,143,19,1,0,0,0,144,142,1,0,0,0,145,148,5,
-        1,0,0,146,147,5,55,0,0,147,149,5,1,0,0,148,146,1,0,0,0,148,149,1,
-        0,0,0,149,21,1,0,0,0,150,151,5,42,0,0,151,152,5,18,0,0,152,153,3,
-        2,1,0,153,154,3,24,12,0,154,23,1,0,0,0,155,156,5,43,0,0,156,157,
-        5,1,0,0,157,158,5,18,0,0,158,159,3,2,1,0,159,25,1,0,0,0,160,161,
-        5,24,0,0,161,162,5,11,0,0,162,163,3,60,30,0,163,164,5,12,0,0,164,
-        27,1,0,0,0,165,168,3,6,3,0,166,167,5,17,0,0,167,169,3,6,3,0,168,
-        166,1,0,0,0,168,169,1,0,0,0,169,29,1,0,0,0,170,171,5,45,0,0,171,
-        172,3,32,16,0,172,31,1,0,0,0,173,178,3,34,17,0,174,175,3,34,17,0,
-        175,176,3,60,30,0,176,178,1,0,0,0,177,173,1,0,0,0,177,174,1,0,0,
-        0,178,33,1,0,0,0,179,180,5,1,0,0,180,35,1,0,0,0,181,186,3,38,19,
-        0,182,186,3,40,20,0,183,186,3,42,21,0,184,186,3,44,22,0,185,181,
-        1,0,0,0,185,182,1,0,0,0,185,183,1,0,0,0,185,184,1,0,0,0,186,37,1,
-        0,0,0,187,188,5,26,0,0,188,189,3,70,35,0,189,190,5,18,0,0,190,191,
-        5,4,0,0,191,200,3,52,26,0,192,193,5,28,0,0,193,194,3,70,35,0,194,
-        195,5,18,0,0,195,196,5,4,0,0,196,197,3,52,26,0,197,199,1,0,0,0,198,
-        192,1,0,0,0,199,202,1,0,0,0,200,198,1,0,0,0,200,201,1,0,0,0,201,
-        209,1,0,0,0,202,200,1,0,0,0,203,204,5,27,0,0,204,205,3,70,35,0,205,
-        206,5,18,0,0,206,207,5,4,0,0,207,208,3,52,26,0,208,210,1,0,0,0,209,
-        203,1,0,0,0,209,210,1,0,0,0,210,39,1,0,0,0,211,212,5,33,0,0,212,
-        213,5,11,0,0,213,214,3,70,35,0,214,215,5,12,0,0,215,216,5,18,0,0,
-        216,217,5,4,0,0,217,218,3,50,25,0,218,41,1,0,0,0,219,220,5,29,0,
-        0,220,221,5,1,0,0,221,222,5,30,0,0,222,223,5,31,0,0,223,224,5,11,
-        0,0,224,225,5,2,0,0,225,226,5,12,0,0,226,227,5,18,0,0,227,228,5,
-        4,0,0,228,229,3,50,25,0,229,43,1,0,0,0,230,231,5,39,0,0,231,232,
-        5,1,0,0,232,234,5,11,0,0,233,235,3,46,23,0,234,233,1,0,0,0,234,235,
-        1,0,0,0,235,236,1,0,0,0,236,237,5,12,0,0,237,238,5,18,0,0,238,239,
-        5,4,0,0,239,240,3,52,26,0,240,45,1,0,0,0,241,246,3,48,24,0,242,243,
-        5,17,0,0,243,245,3,48,24,0,244,242,1,0,0,0,245,248,1,0,0,0,246,244,
-        1,0,0,0,246,247,1,0,0,0,247,47,1,0,0,0,248,246,1,0,0,0,249,250,5,
-        1,0,0,250,49,1,0,0,0,251,254,3,2,1,0,252,254,3,54,27,0,253,251,1,
-        0,0,0,253,252,1,0,0,0,254,51,1,0,0,0,255,258,3,50,25,0,256,258,3,
-        56,28,0,257,255,1,0,0,0,257,256,1,0,0,0,258,53,1,0,0,0,259,260,7,
-        0,0,0,260,261,5,4,0,0,261,55,1,0,0,0,262,264,5,38,0,0,263,265,3,
-        58,29,0,264,263,1,0,0,0,264,265,1,0,0,0,265,266,1,0,0,0,266,267,
-        5,4,0,0,267,57,1,0,0,0,268,269,3,60,30,0,269,270,5,17,0,0,270,271,
+        0,101,98,1,0,0,0,102,5,1,0,0,0,103,104,5,3,0,0,104,105,5,11,0,0,
+        105,106,3,60,30,0,106,7,1,0,0,0,107,108,5,55,0,0,108,113,3,10,5,
+        0,109,110,5,19,0,0,110,112,3,10,5,0,111,109,1,0,0,0,112,115,1,0,
+        0,0,113,111,1,0,0,0,113,114,1,0,0,0,114,9,1,0,0,0,115,113,1,0,0,
+        0,116,119,5,3,0,0,117,118,5,11,0,0,118,120,3,60,30,0,119,117,1,0,
+        0,0,119,120,1,0,0,0,120,11,1,0,0,0,121,122,5,50,0,0,122,123,3,16,
+        8,0,123,13,1,0,0,0,124,125,5,51,0,0,125,126,3,16,8,0,126,127,5,50,
+        0,0,127,128,3,18,9,0,128,15,1,0,0,0,129,134,5,3,0,0,130,131,5,19,
+        0,0,131,133,5,3,0,0,132,130,1,0,0,0,133,136,1,0,0,0,134,132,1,0,
+        0,0,134,135,1,0,0,0,135,17,1,0,0,0,136,134,1,0,0,0,137,142,3,20,
+        10,0,138,139,5,20,0,0,139,141,3,20,10,0,140,138,1,0,0,0,141,144,
+        1,0,0,0,142,140,1,0,0,0,142,143,1,0,0,0,143,19,1,0,0,0,144,142,1,
+        0,0,0,145,148,5,3,0,0,146,147,5,58,0,0,147,149,5,3,0,0,148,146,1,
+        0,0,0,148,149,1,0,0,0,149,21,1,0,0,0,150,151,5,44,0,0,151,152,5,
+        20,0,0,152,153,3,2,1,0,153,154,3,24,12,0,154,23,1,0,0,0,155,156,
+        5,46,0,0,156,157,5,3,0,0,157,158,5,20,0,0,158,159,3,2,1,0,159,25,
+        1,0,0,0,160,161,5,26,0,0,161,162,5,13,0,0,162,163,3,60,30,0,163,
+        164,5,14,0,0,164,27,1,0,0,0,165,168,3,6,3,0,166,167,5,19,0,0,167,
+        169,3,6,3,0,168,166,1,0,0,0,168,169,1,0,0,0,169,29,1,0,0,0,170,171,
+        5,48,0,0,171,172,3,32,16,0,172,31,1,0,0,0,173,178,3,34,17,0,174,
+        175,3,34,17,0,175,176,3,60,30,0,176,178,1,0,0,0,177,173,1,0,0,0,
+        177,174,1,0,0,0,178,33,1,0,0,0,179,180,5,3,0,0,180,35,1,0,0,0,181,
+        186,3,38,19,0,182,186,3,40,20,0,183,186,3,42,21,0,184,186,3,44,22,
+        0,185,181,1,0,0,0,185,182,1,0,0,0,185,183,1,0,0,0,185,184,1,0,0,
+        0,186,37,1,0,0,0,187,188,5,28,0,0,188,189,3,70,35,0,189,190,5,20,
+        0,0,190,191,5,6,0,0,191,200,3,52,26,0,192,193,5,30,0,0,193,194,3,
+        70,35,0,194,195,5,20,0,0,195,196,5,6,0,0,196,197,3,52,26,0,197,199,
+        1,0,0,0,198,192,1,0,0,0,199,202,1,0,0,0,200,198,1,0,0,0,200,201,
+        1,0,0,0,201,209,1,0,0,0,202,200,1,0,0,0,203,204,5,29,0,0,204,205,
+        3,70,35,0,205,206,5,20,0,0,206,207,5,6,0,0,207,208,3,52,26,0,208,
+        210,1,0,0,0,209,203,1,0,0,0,209,210,1,0,0,0,210,39,1,0,0,0,211,212,
+        5,35,0,0,212,213,5,13,0,0,213,214,3,70,35,0,214,215,5,14,0,0,215,
+        216,5,20,0,0,216,217,5,6,0,0,217,218,3,50,25,0,218,41,1,0,0,0,219,
+        220,5,31,0,0,220,221,5,3,0,0,221,222,5,32,0,0,222,223,5,33,0,0,223,
+        224,5,13,0,0,224,225,5,4,0,0,225,226,5,14,0,0,226,227,5,20,0,0,227,
+        228,5,6,0,0,228,229,3,50,25,0,229,43,1,0,0,0,230,231,5,41,0,0,231,
+        232,5,3,0,0,232,234,5,13,0,0,233,235,3,46,23,0,234,233,1,0,0,0,234,
+        235,1,0,0,0,235,236,1,0,0,0,236,237,5,14,0,0,237,238,5,20,0,0,238,
+        239,5,6,0,0,239,240,3,52,26,0,240,45,1,0,0,0,241,246,3,48,24,0,242,
+        243,5,19,0,0,243,245,3,48,24,0,244,242,1,0,0,0,245,248,1,0,0,0,246,
+        244,1,0,0,0,246,247,1,0,0,0,247,47,1,0,0,0,248,246,1,0,0,0,249,250,
+        5,3,0,0,250,49,1,0,0,0,251,254,3,2,1,0,252,254,3,54,27,0,253,251,
+        1,0,0,0,253,252,1,0,0,0,254,51,1,0,0,0,255,258,3,50,25,0,256,258,
+        3,56,28,0,257,255,1,0,0,0,257,256,1,0,0,0,258,53,1,0,0,0,259,260,
+        7,0,0,0,260,261,5,6,0,0,261,55,1,0,0,0,262,264,5,40,0,0,263,265,
+        3,58,29,0,264,263,1,0,0,0,264,265,1,0,0,0,265,266,1,0,0,0,266,267,
+        5,6,0,0,267,57,1,0,0,0,268,269,3,60,30,0,269,270,5,19,0,0,270,271,
         3,60,30,0,271,59,1,0,0,0,272,277,3,78,39,0,273,277,3,62,31,0,274,
         277,3,70,35,0,275,277,3,68,34,0,276,272,1,0,0,0,276,273,1,0,0,0,
         276,274,1,0,0,0,276,275,1,0,0,0,277,61,1,0,0,0,278,279,6,31,-1,0,
-        279,280,3,64,32,0,280,289,1,0,0,0,281,282,10,2,0,0,282,283,5,5,0,
-        0,283,288,3,64,32,0,284,285,10,1,0,0,285,286,5,6,0,0,286,288,3,64,
+        279,280,3,64,32,0,280,289,1,0,0,0,281,282,10,2,0,0,282,283,5,7,0,
+        0,283,288,3,64,32,0,284,285,10,1,0,0,285,286,5,8,0,0,286,288,3,64,
         32,0,287,281,1,0,0,0,287,284,1,0,0,0,288,291,1,0,0,0,289,287,1,0,
         0,0,289,290,1,0,0,0,290,63,1,0,0,0,291,289,1,0,0,0,292,293,6,32,
         -1,0,293,294,3,66,33,0,294,303,1,0,0,0,295,296,10,2,0,0,296,297,
-        5,7,0,0,297,302,3,66,33,0,298,299,10,1,0,0,299,300,5,8,0,0,300,302,
-        3,66,33,0,301,295,1,0,0,0,301,298,1,0,0,0,302,305,1,0,0,0,303,301,
-        1,0,0,0,303,304,1,0,0,0,304,65,1,0,0,0,305,303,1,0,0,0,306,312,3,
-        78,39,0,307,308,5,11,0,0,308,309,3,60,30,0,309,310,5,12,0,0,310,
+        5,9,0,0,297,302,3,66,33,0,298,299,10,1,0,0,299,300,5,10,0,0,300,
+        302,3,66,33,0,301,295,1,0,0,0,301,298,1,0,0,0,302,305,1,0,0,0,303,
+        301,1,0,0,0,303,304,1,0,0,0,304,65,1,0,0,0,305,303,1,0,0,0,306,312,
+        3,78,39,0,307,308,5,1,0,0,308,309,3,60,30,0,309,310,5,2,0,0,310,
         312,1,0,0,0,311,306,1,0,0,0,311,307,1,0,0,0,312,67,1,0,0,0,313,314,
-        5,3,0,0,314,315,5,17,0,0,315,316,3,60,30,0,316,69,1,0,0,0,317,318,
+        5,5,0,0,314,315,5,19,0,0,315,316,3,60,30,0,316,69,1,0,0,0,317,318,
         6,35,-1,0,318,319,3,72,36,0,319,325,1,0,0,0,320,321,10,1,0,0,321,
-        322,5,57,0,0,322,324,3,72,36,0,323,320,1,0,0,0,324,327,1,0,0,0,325,
+        322,5,60,0,0,322,324,3,72,36,0,323,320,1,0,0,0,324,327,1,0,0,0,325,
         323,1,0,0,0,325,326,1,0,0,0,326,71,1,0,0,0,327,325,1,0,0,0,328,329,
         6,36,-1,0,329,330,3,74,37,0,330,336,1,0,0,0,331,332,10,1,0,0,332,
-        333,5,21,0,0,333,335,3,74,37,0,334,331,1,0,0,0,335,338,1,0,0,0,336,
+        333,5,23,0,0,333,335,3,74,37,0,334,331,1,0,0,0,335,338,1,0,0,0,336,
         334,1,0,0,0,336,337,1,0,0,0,337,73,1,0,0,0,338,336,1,0,0,0,339,340,
         6,37,-1,0,340,341,3,76,38,0,341,347,1,0,0,0,342,343,10,1,0,0,343,
-        344,5,22,0,0,344,346,3,76,38,0,345,342,1,0,0,0,346,349,1,0,0,0,347,
+        344,5,24,0,0,344,346,3,76,38,0,345,342,1,0,0,0,346,349,1,0,0,0,347,
         345,1,0,0,0,347,348,1,0,0,0,348,75,1,0,0,0,349,347,1,0,0,0,350,358,
-        3,78,39,0,351,352,5,11,0,0,352,353,3,70,35,0,353,354,5,12,0,0,354,
-        358,1,0,0,0,355,356,5,25,0,0,356,358,3,76,38,0,357,350,1,0,0,0,357,
+        3,78,39,0,351,352,5,13,0,0,352,353,3,70,35,0,353,354,5,14,0,0,354,
+        358,1,0,0,0,355,356,5,27,0,0,356,358,3,76,38,0,357,350,1,0,0,0,357,
         351,1,0,0,0,357,355,1,0,0,0,358,77,1,0,0,0,359,360,7,1,0,0,360,79,
         1,0,0,0,28,83,89,101,113,119,134,142,148,168,177,185,200,209,234,
         246,253,257,264,276,287,289,301,303,311,325,336,347,357
@@ -145,27 +145,37 @@ class GrammarParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'+'", "'-'", "'*'", "'/'", "'='", "'%'", 
-                     "'('", "')'", "'{'", "'}'", "'['", "']'", "','", "':'", 
-                     "';'", "'\"'", "'or'", "'and'", "<INVALID>", "'print'", 
-                     "'not'", "'if'", "'else'", "'elif'", "'for'", "'in'", 
-                     "'range'", "'enumerate'", "'while'", "'switch'", "'case'", 
-                     "'break'", "'continue'", "'return'", "'def'", "'true'", 
-                     "'false'", "'try'", "'EXCEPT'", "'finally'", "'raise'", 
-                     "'const'", "'import'", "'from'", "'lambda'", "'none'", 
-                     "'~'", "'decl'", "<INVALID>", "'->'", "'as'" ]
+    literalNames = [ "<INVALID>", "'('", "')'", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "'<plus>'", "'<minus>'", 
+                     "'<multiply>'", "'<divide>'", "'<heavy equals sign>'", 
+                     "'%'", "'<leftwards pushing hand>'", "'<rightwards pushing hand>'", 
+                     "'{'", "'}'", "'<leftwards hand>'", "'<tightwards hand>'", 
+                     "'<paperclip>'", "'<linked paperclips>'", "'<pushpin>'", 
+                     "'<clapper board>'", "'<woman detective>'", "'<women holding hands>'", 
+                     "<INVALID>", "'<printer>'", "'<red exclamation mark>'", 
+                     "'<red question mark>'", "'<red exclamation mark> <red exclamation mark>'", 
+                     "'<red question mark> <red exclamation mark>'", "'<wrapped gift>'", 
+                     "'<open mailbox with lowered flag>'", "'<snow-capped mountain>'", 
+                     "'<radio>'", "'<tornado>'", "'<clipboard>'", "'<check mark button>'", 
+                     "'<vertical traffic light>'", "'<person getting massage>'", 
+                     "'<boomerang>'", "'<light bulb>'", "'<thumbs up>'", 
+                     "'<thumbs down>'", "'<crystal ball>'", "'<fishing pole>'", 
+                     "'EXCEPT'", "'<hourglass done>'", "'<sunrise>'", "'<skull>'", 
+                     "'<globe showing Americas>'", "'<articulated lorry>'", 
+                     "'<rainbow>'", "'<wastebasket>'", "'<wavy dash>'", 
+                     "'decl'", "<INVALID>", "'->'", "'as'" ]
 
-    symbolicNames = [ "<INVALID>", "IDENTIFIER", "NUMBER", "STRING", "WS", 
-                      "PLUS", "MINUS", "MULTIPLY", "DIVIDE", "EQUAL", "MOD", 
-                      "LPAR", "RPAR", "LBRACE", "RBRACE", "LSQB", "RSQB", 
-                      "COMMA", "COLON", "SEMI", "QUOTE", "OR", "AND", "COMMENT", 
-                      "PRINT", "NOT", "IF", "ELSE", "ELIF", "FOR", "IN", 
-                      "RANGE", "ENUMERATE", "WHILE", "SWITCH", "CASE", "BREAK", 
-                      "CONTINUE", "RETURN", "DEF", "TRUE", "FALSE", "TRY", 
-                      "EXCEPT", "FINALLY", "RAISE", "CONST", "IMPORT", "FROM", 
-                      "LAMBDA", "NONE", "ECOMPLEMENT", "DECL", "TYPE", "ARROW", 
-                      "AS", "BOOLEAN", "CONDITION_OP" ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "IDENTIFIER", 
+                      "NUMBER", "STRING", "WS", "PLUS", "MINUS", "MULTIPLY", 
+                      "DIVIDE", "EQUAL", "MOD", "LPAR", "RPAR", "LBRACE", 
+                      "RBRACE", "LSQB", "RSQB", "COMMA", "COLON", "SEMI", 
+                      "QUOTE", "OR", "AND", "COMMENT", "PRINT", "NOT", "IF", 
+                      "ELSE", "ELIF", "FOR", "IN", "RANGE", "ENUMERATE", 
+                      "WHILE", "SWITCH", "CASE", "BREAK", "CONTINUE", "RETURN", 
+                      "DEF", "TRUE", "FALSE", "TRY", "CATCH", "EXCEPT", 
+                      "FINALLY", "RAISE", "CONST", "IMPORT", "FROM", "LAMBDA", 
+                      "NONE", "ECOMPLEMENT", "DECL", "TYPE", "ARROW", "AS", 
+                      "BOOLEAN", "CONDITION_OP" ]
 
     RULE_start = 0
     RULE_stmt = 1
@@ -220,63 +230,66 @@ class GrammarParser ( Parser ):
                    "logicalTerm", "logicalFactor", "logicalPrimary", "value" ]
 
     EOF = Token.EOF
-    IDENTIFIER=1
-    NUMBER=2
-    STRING=3
-    WS=4
-    PLUS=5
-    MINUS=6
-    MULTIPLY=7
-    DIVIDE=8
-    EQUAL=9
-    MOD=10
-    LPAR=11
-    RPAR=12
-    LBRACE=13
-    RBRACE=14
-    LSQB=15
-    RSQB=16
-    COMMA=17
-    COLON=18
-    SEMI=19
-    QUOTE=20
-    OR=21
-    AND=22
-    COMMENT=23
-    PRINT=24
-    NOT=25
-    IF=26
-    ELSE=27
-    ELIF=28
-    FOR=29
-    IN=30
-    RANGE=31
-    ENUMERATE=32
-    WHILE=33
-    SWITCH=34
-    CASE=35
-    BREAK=36
-    CONTINUE=37
-    RETURN=38
-    DEF=39
-    TRUE=40
-    FALSE=41
-    TRY=42
-    EXCEPT=43
-    FINALLY=44
-    RAISE=45
-    CONST=46
-    IMPORT=47
-    FROM=48
-    LAMBDA=49
-    NONE=50
-    ECOMPLEMENT=51
-    DECL=52
-    TYPE=53
-    ARROW=54
-    AS=55
-    BOOLEAN=56
-    CONDITION_OP=57
+    T__0=1
+    T__1=2
+    IDENTIFIER=3
+    NUMBER=4
+    STRING=5
+    WS=6
+    PLUS=7
+    MINUS=8
+    MULTIPLY=9
+    DIVIDE=10
+    EQUAL=11
+    MOD=12
+    LPAR=13
+    RPAR=14
+    LBRACE=15
+    RBRACE=16
+    LSQB=17
+    RSQB=18
+    COMMA=19
+    COLON=20
+    SEMI=21
+    QUOTE=22
+    OR=23
+    AND=24
+    COMMENT=25
+    PRINT=26
+    NOT=27
+    IF=28
+    ELSE=29
+    ELIF=30
+    FOR=31
+    IN=32
+    RANGE=33
+    ENUMERATE=34
+    WHILE=35
+    SWITCH=36
+    CASE=37
+    BREAK=38
+    CONTINUE=39
+    RETURN=40
+    DEF=41
+    TRUE=42
+    FALSE=43
+    TRY=44
+    CATCH=45
+    EXCEPT=46
+    FINALLY=47
+    RAISE=48
+    CONST=49
+    IMPORT=50
+    FROM=51
+    LAMBDA=52
+    NONE=53
+    ECOMPLEMENT=54
+    DECL=55
+    TYPE=56
+    ARROW=57
+    AS=58
+    BOOLEAN=59
+    CONDITION_OP=60
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -315,6 +328,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitStart" ):
                 listener.exitStart(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStart" ):
+                return visitor.visitStart(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -334,7 +353,7 @@ class GrammarParser ( Parser ):
                 self.state = 83 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 76706888200226830) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 613635277415522362) != 0)):
                     break
 
             self.state = 85
@@ -374,6 +393,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitStmt" ):
                 listener.exitStmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStmt" ):
+                return visitor.visitStmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -386,11 +411,11 @@ class GrammarParser ( Parser ):
             self.state = 89
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [1, 2, 3, 11, 24, 25, 42, 47, 52, 56]:
+            if token in [1, 3, 4, 5, 13, 26, 27, 44, 50, 55, 59]:
                 self.state = 87
                 self.simple_stmt()
                 pass
-            elif token in [26, 29, 33, 39]:
+            elif token in [28, 31, 35, 41]:
                 self.state = 88
                 self.compound_stmt()
                 pass
@@ -454,6 +479,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSimple_stmt" ):
                 listener.exitSimple_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSimple_stmt" ):
+                return visitor.visitSimple_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -554,6 +585,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitAssignment_stmt" ):
                 listener.exitAssignment_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssignment_stmt" ):
+                return visitor.visitAssignment_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -612,6 +649,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitDeclare_stmt" ):
                 listener.exitDeclare_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclare_stmt" ):
+                return visitor.visitDeclare_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -629,7 +672,7 @@ class GrammarParser ( Parser ):
             self.state = 113
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==17:
+            while _la==19:
                 self.state = 109
                 self.match(GrammarParser.COMMA)
                 self.state = 110
@@ -675,6 +718,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitSingle_declaration" ):
                 listener.exitSingle_declaration(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSingle_declaration" ):
+                return visitor.visitSingle_declaration(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -690,7 +739,7 @@ class GrammarParser ( Parser ):
             self.state = 119
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==9:
+            if _la==11:
                 self.state = 117
                 self.match(GrammarParser.EQUAL)
                 self.state = 118
@@ -730,6 +779,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitImport_stmt" ):
                 listener.exitImport_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_stmt" ):
+                return visitor.visitImport_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -784,6 +839,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFrom_stmt" ):
                 listener.exitFrom_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFrom_stmt" ):
+                return visitor.visitFrom_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -841,6 +902,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitModule_name" ):
                 listener.exitModule_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitModule_name" ):
+                return visitor.visitModule_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -856,7 +923,7 @@ class GrammarParser ( Parser ):
             self.state = 134
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==17:
+            while _la==19:
                 self.state = 130
                 self.match(GrammarParser.COMMA)
                 self.state = 131
@@ -905,6 +972,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitImport_list" ):
                 listener.exitImport_list(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_list" ):
+                return visitor.visitImport_list(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -920,7 +993,7 @@ class GrammarParser ( Parser ):
             self.state = 142
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==18:
+            while _la==20:
                 self.state = 138
                 self.match(GrammarParser.COLON)
                 self.state = 139
@@ -965,6 +1038,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitImport_name" ):
                 listener.exitImport_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_name" ):
+                return visitor.visitImport_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -980,7 +1059,7 @@ class GrammarParser ( Parser ):
             self.state = 148
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==55:
+            if _la==58:
                 self.state = 146
                 self.match(GrammarParser.AS)
                 self.state = 147
@@ -1027,6 +1106,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTry_stmt" ):
                 listener.exitTry_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTry_stmt" ):
+                return visitor.visitTry_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1085,6 +1170,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitExcept_clause" ):
                 listener.exitExcept_clause(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExcept_clause" ):
+                return visitor.visitExcept_clause(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1142,6 +1233,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitPrint_stmt" ):
                 listener.exitPrint_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrint_stmt" ):
+                return visitor.visitPrint_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1196,6 +1293,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitMultiple_assignment_stmt" ):
                 listener.exitMultiple_assignment_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMultiple_assignment_stmt" ):
+                return visitor.visitMultiple_assignment_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1211,7 +1314,7 @@ class GrammarParser ( Parser ):
             self.state = 168
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==17:
+            if _la==19:
                 self.state = 166
                 self.match(GrammarParser.COMMA)
                 self.state = 167
@@ -1251,6 +1354,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRaise_stmt" ):
                 listener.exitRaise_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRaise_stmt" ):
+                return visitor.visitRaise_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1299,6 +1408,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitException_expr" ):
                 listener.exitException_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitException_expr" ):
+                return visitor.visitException_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1356,6 +1471,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitException_name" ):
                 listener.exitException_name(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitException_name" ):
+                return visitor.visitException_name(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1410,6 +1531,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitCompound_stmt" ):
                 listener.exitCompound_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCompound_stmt" ):
+                return visitor.visitCompound_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1421,22 +1548,22 @@ class GrammarParser ( Parser ):
             self.state = 185
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [26]:
+            if token in [28]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 181
                 self.if_stmt()
                 pass
-            elif token in [33]:
+            elif token in [35]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 182
                 self.while_stmt()
                 pass
-            elif token in [29]:
+            elif token in [31]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 183
                 self.for_stmt()
                 pass
-            elif token in [39]:
+            elif token in [41]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 184
                 self.function_def()
@@ -1508,6 +1635,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIf_stmt" ):
                 listener.exitIf_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIf_stmt" ):
+                return visitor.visitIf_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1613,6 +1746,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitWhile_stmt" ):
                 listener.exitWhile_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWhile_stmt" ):
+                return visitor.visitWhile_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1693,6 +1832,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFor_stmt" ):
                 listener.exitFor_stmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFor_stmt" ):
+                return visitor.visitFor_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1776,6 +1921,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitFunction_def" ):
                 listener.exitFunction_def(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunction_def" ):
+                return visitor.visitFunction_def(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1795,7 +1946,7 @@ class GrammarParser ( Parser ):
             self.state = 234
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==1:
+            if _la==3:
                 self.state = 233
                 self.parameters()
 
@@ -1848,6 +1999,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitParameters" ):
                 listener.exitParameters(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitParameters" ):
+                return visitor.visitParameters(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1863,7 +2020,7 @@ class GrammarParser ( Parser ):
             self.state = 246
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==17:
+            while _la==19:
                 self.state = 242
                 self.match(GrammarParser.COMMA)
                 self.state = 243
@@ -1901,6 +2058,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTyped_par" ):
                 listener.exitTyped_par(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTyped_par" ):
+                return visitor.visitTyped_par(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1948,6 +2111,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitLoop_stmt" ):
                 listener.exitLoop_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLoop_stmt" ):
+                return visitor.visitLoop_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1960,11 +2129,11 @@ class GrammarParser ( Parser ):
             self.state = 253
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [1, 2, 3, 11, 24, 25, 26, 29, 33, 39, 42, 47, 52, 56]:
+            if token in [1, 3, 4, 5, 13, 26, 27, 28, 31, 35, 41, 44, 50, 55, 59]:
                 self.state = 251
                 self.stmt()
                 pass
-            elif token in [36, 37]:
+            elif token in [38, 39]:
                 self.state = 252
                 self.flow_stmt()
                 pass
@@ -2006,6 +2175,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitFunc_body" ):
                 listener.exitFunc_body(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_body" ):
+                return visitor.visitFunc_body(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2018,11 +2193,11 @@ class GrammarParser ( Parser ):
             self.state = 257
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [1, 2, 3, 11, 24, 25, 26, 29, 33, 36, 37, 39, 42, 47, 52, 56]:
+            if token in [1, 3, 4, 5, 13, 26, 27, 28, 31, 35, 38, 39, 41, 44, 50, 55, 59]:
                 self.state = 255
                 self.loop_stmt()
                 pass
-            elif token in [38]:
+            elif token in [40]:
                 self.state = 256
                 self.return_stmt()
                 pass
@@ -2065,6 +2240,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitFlow_stmt" ):
                 listener.exitFlow_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFlow_stmt" ):
+                return visitor.visitFlow_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2077,7 +2258,7 @@ class GrammarParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 259
             _la = self._input.LA(1)
-            if not(_la==36 or _la==37):
+            if not(_la==38 or _la==39):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2121,6 +2302,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitReturn_stmt" ):
                 listener.exitReturn_stmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReturn_stmt" ):
+                return visitor.visitReturn_stmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2136,7 +2323,7 @@ class GrammarParser ( Parser ):
             self.state = 264
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 72057594071484430) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 576460752437649466) != 0):
                 self.state = 263
                 self.explist()
 
@@ -2179,6 +2366,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExplist" ):
                 listener.exitExplist(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExplist" ):
+                return visitor.visitExplist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2238,6 +2431,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExp" ):
                 listener.exitExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExp" ):
+                return visitor.visitExp(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2315,6 +2514,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitArithmeticOperation" ):
                 listener.exitArithmeticOperation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArithmeticOperation" ):
+                return visitor.visitArithmeticOperation(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2413,6 +2618,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitTerm" ):
                 listener.exitTerm(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTerm" ):
+                return visitor.visitTerm(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
     def term(self, _p:int=0):
@@ -2489,15 +2700,9 @@ class GrammarParser ( Parser ):
             return self.getTypedRuleContext(GrammarParser.ValueContext,0)
 
 
-        def LPAR(self):
-            return self.getToken(GrammarParser.LPAR, 0)
-
         def exp(self):
             return self.getTypedRuleContext(GrammarParser.ExpContext,0)
 
-
-        def RPAR(self):
-            return self.getToken(GrammarParser.RPAR, 0)
 
         def getRuleIndex(self):
             return GrammarParser.RULE_factor
@@ -2510,6 +2715,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitFactor" ):
                 listener.exitFactor(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFactor" ):
+                return visitor.visitFactor(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2521,19 +2732,19 @@ class GrammarParser ( Parser ):
             self.state = 311
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [1, 2, 3, 56]:
+            if token in [3, 4, 5, 59]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 306
                 self.value()
                 pass
-            elif token in [11]:
+            elif token in [1]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 307
-                self.match(GrammarParser.LPAR)
+                self.match(GrammarParser.T__0)
                 self.state = 308
                 self.exp()
                 self.state = 309
-                self.match(GrammarParser.RPAR)
+                self.match(GrammarParser.T__1)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -2574,6 +2785,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPrintOperation" ):
                 listener.exitPrintOperation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrintOperation" ):
+                return visitor.visitPrintOperation(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2627,6 +2844,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitConditionalOperation" ):
                 listener.exitConditionalOperation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitConditionalOperation" ):
+                return visitor.visitConditionalOperation(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2702,6 +2925,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitLogicalTerm" ):
                 listener.exitLogicalTerm(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLogicalTerm" ):
+                return visitor.visitLogicalTerm(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
     def logicalTerm(self, _p:int=0):
@@ -2775,6 +3004,12 @@ class GrammarParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLogicalFactor" ):
                 listener.exitLogicalFactor(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLogicalFactor" ):
+                return visitor.visitLogicalFactor(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2860,6 +3095,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitLogicalPrimary" ):
                 listener.exitLogicalPrimary(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLogicalPrimary" ):
+                return visitor.visitLogicalPrimary(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2871,12 +3112,12 @@ class GrammarParser ( Parser ):
             self.state = 357
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [1, 2, 3, 56]:
+            if token in [3, 4, 5, 59]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 350
                 self.value()
                 pass
-            elif token in [11]:
+            elif token in [13]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 351
                 self.match(GrammarParser.LPAR)
@@ -2885,7 +3126,7 @@ class GrammarParser ( Parser ):
                 self.state = 353
                 self.match(GrammarParser.RPAR)
                 pass
-            elif token in [25]:
+            elif token in [27]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 355
                 self.match(GrammarParser.NOT)
@@ -2934,6 +3175,12 @@ class GrammarParser ( Parser ):
             if hasattr( listener, "exitValue" ):
                 listener.exitValue(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitValue" ):
+                return visitor.visitValue(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2946,7 +3193,7 @@ class GrammarParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 359
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 72057594037927950) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 576460752303423544) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

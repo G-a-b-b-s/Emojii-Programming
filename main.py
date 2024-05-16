@@ -1,15 +1,10 @@
 from antlr4 import *
-from graphviz import dot
-
-from Compiler.GrammarLexer import GrammarLexer
-from Compiler.GrammarParser import GrammarParser
-from Compiler.GrammarListener import GrammarListener
 from antlr4.tree.Tree import *
-from antlr4 import ParserRuleContext
 import graphviz
 
-import spacy
-
+from Supplier.GrammarLexer import GrammarLexer
+from Supplier.GrammarParser import GrammarParser
+from EmojiHandler.EmojiReader import EmojiReader
 
 def print_tokens(lexer):
     lexer.reset()
@@ -68,20 +63,26 @@ class TreePrinterListener(ParseTreeListener):
 
 
 def main():
-    # tu możesz wybrać inny plik do testowania z folderu algorithms lub przesłać swój plik do folderu, a następnie wpisać jesgo nazwę
-    input_stream = FileStream('Examples/example.txt', encoding='utf-8')
+    #Tu wpisz ścieżkę do pliku, który chcesz przetworzyć albo wykorzystaj jeden z przykładowych plików
+    input_file = 'Examples/1/originalExample.txt'
+    output_file = 'Examples/1/example.txt'
+
+    #Preprocessing
+    EmojiReader(input_file).convertText(output_file)
+
+    input_stream = FileStream(output_file, encoding='utf-8')
     lexer = GrammarLexer(input_stream)
     print_tokens(lexer)
     stream = CommonTokenStream(lexer)
     parser = GrammarParser(stream)
     tree = parser.start()
 
+    #Konstrukcja drzewa
 
     printer = TreePrinterListener(parser.ruleNames)
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
     formatted_tree = printer.getFormattedTree()
-    print(formatted_tree)
     with open('Results/parsing_tree.txt', 'w', encoding='utf-8') as file:
         file.write(formatted_tree)
     printer.saveGraph('Results/dot_parsing_tree')
