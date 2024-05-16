@@ -1,3 +1,0 @@
-<light bulb> add_numbers <leftwards pushing hand> <input latin uppercase> a <input latin uppercase> <paperclip> <input latin uppercase> b <input latin uppercase> <rightwards pushing hand> <linked paperclips> 
-     <printer> <leftwards pushing hand> a <plus> b <rightwards pushing hand> 
-     <printer> <leftwards pushing hand> <writing hand> ️statement <writing hand> <rightwards pushing hand> 

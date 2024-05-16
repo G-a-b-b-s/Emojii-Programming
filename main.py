@@ -1,10 +1,12 @@
 from antlr4 import *
 from antlr4.tree.Tree import *
 import graphviz
-
+import translator
 from Supplier.GrammarLexer import GrammarLexer
 from Supplier.GrammarParser import GrammarParser
 from EmojiHandler.EmojiReader import EmojiReader
+from gen.kolejnaProbaLexer import kolejnaProbaLexer
+from gen.kolejnaProbaParser import  kolejnaProbaParser
 
 def print_tokens(lexer):
     lexer.reset()
@@ -68,13 +70,21 @@ def main():
     output_file = 'Examples/1/example.txt'
 
     #Preprocessing
-    EmojiReader(input_file).convertText(output_file)
+    # EmojiReader(input_file).convertText(output_file)
+    #
+    # input_stream = FileStream(output_file, encoding='utf-8')
+    # lexer = GrammarLexer(input_stream)
+    # print_tokens(lexer)
+    # stream = CommonTokenStream(lexer)
+    # parser = GrammarParser(stream)
+    # tree = parser.start()
 
+    translator.translator(input_file, output_file)
     input_stream = FileStream(output_file, encoding='utf-8')
-    lexer = GrammarLexer(input_stream)
+    lexer = kolejnaProbaLexer(input_stream)
     print_tokens(lexer)
     stream = CommonTokenStream(lexer)
-    parser = GrammarParser(stream)
+    parser = kolejnaProbaParser(stream)
     tree = parser.start()
 
     #Konstrukcja drzewa
