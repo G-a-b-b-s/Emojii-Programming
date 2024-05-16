@@ -1,70 +1,71 @@
-grammar Grammar; 
+grammar Grammar;
 
 start : stmt+EOF;
 
 
-IDENTIFIER  :'<input latin uppercase>' [ A - Za - z]+[A - za - z0 - 9 ] * '<input latin uppercase>';
-NUMBER : '<input latin uppercase>'[0-9]+('.'[0-9]+)?'<input latin uppercase>';
-STRING : '<writing hand>' ~('\n')* '<writing hand>';
+
 WS: [ \t\r\n]+ -> skip;
-PLUS        : '<plus>';
-MINUS       : '<minus>';
-MULTIPLY    : '<multiply>';
-DIVIDE      : '<divide>';
-EQUAL       : '<heavy equals sign>';
+PLUS        : '+';
+MINUS       : '-';
+MULTIPLY    : '*';
+DIVIDE      : '/';
+EQUAL       : '=';
 
 MOD         : '%';
-LPAR        : '<leftwards pushing hand>';
-RPAR        : '<rightwards pushing hand>';
+LPAR        : '(';
+RPAR        : ')';
 LBRACE      : '{';
 RBRACE      : '}';
-LSQB        : '<leftwards hand>';
-RSQB        : '<tightwards hand>';
-COMMA       : '<paperclip>';
-COLON       : '<linked paperclips>';
-SEMI        : '<pushpin>';
-QUOTE       : '<clapper board>';
+LSQB        : '[';
+RSQB        : ']';
+COMMA       : ',';
+COLON       : ':';
+SEMI        : ';';
+QUOTE       : '"';
 
-OR          : '<woman detective>';
-AND         : '<women holding hands>';
+OR          : 'or';
+AND         : 'and';
 
-COMMENT     : '<cloud>' .*? '<cloud>' -> skip;
-PRINT       : '<printer>';
-NOT         : '<red exclamation mark>';
-IF          : '<red question mark>';
-ELSE        : '<red exclamation mark> <red exclamation mark>';
-ELIF        : '<red question mark> <red exclamation mark>';
-FOR         : '<wrapped gift>';
-IN          : '<open mailbox with lowered flag>';
-RANGE       : '<snow-capped mountain>';
-ENUMERATE   : '<radio>';
-WHILE       : '<tornado>';
-SWITCH      : '<clipboard>';
-CASE        : '<check mark button>';
-BREAK       : '<vertical traffic light>';
-CONTINUE    : '<person getting massage>';
-RETURN      : '<boomerang>';
-DEF         : '<light bulb>';
-TRUE        : '<thumbs up>';
-FALSE       : '<thumbs down>';
-TRY         : '<crystal ball>';
-CATCH       : '<fishing pole>';
+COMMENT     : '/*' .*? '*/' -> skip;
+PRINT       : 'print';
+NOT         : 'not';
+IF          : 'if';
+ELSE        : 'else';
+ELIF        : 'elif';
+FOR         : 'for';
+IN          : 'in';
+RANGE       : 'range';
+ENUMERATE   : 'enumerate';
+WHILE       : 'while';
+SWITCH      : 'switch';
+CASE        : 'case';
+BREAK       : 'break';
+CONTINUE    : 'continue';
+RETURN      : 'return';
+DEF         : 'def';
+TRUE        : 'true';
+FALSE       : 'false';
+TRY         : 'try';
 EXCEPT      : 'EXCEPT';
-FINALLY     : '<hourglass done>';
-RAISE       : '<sunrise>';
-CONST       : '<skull>';
-IMPORT      : '<globe showing Americas>';
-FROM        : '<articulated lorry>';
-LAMBDA      : '<rainbow>';
-NONE        : '<wastebasket>';
-ECOMPLEMENT : '<wavy dash>';
+FINALLY     : 'finally';
+RAISE       : 'raise';
+CONST       : 'const';
+IMPORT      : 'import';
+FROM        : 'from';
+LAMBDA      : 'lambda';
+NONE        : 'none';
+ECOMPLEMENT : '~';
 DECL        : 'decl';
-TYPE : 'int' | 'string' | 'char' | 'bool' | 'float' | 'void'; 
+TYPE : 'int' | 'string' | 'char' | 'bool' | 'float' | 'void';
 ARROW       : '->';
 AS          : 'as';
 BOOLEAN: TRUE | FALSE;
 
-CONDITION_OP : '<dragon>' | '<leopard>' | '<mouse>' | '<chipmunk>' | '==' | '!=';
+IDENTIFIER  : [A-Za-z]+[A-Za-z0-9_]*;
+NUMBER : [0-9]+('.'[0-9]+)?;
+STRING : '"' (~["])* '"';
+
+CONDITION_OP : '>' | '>=' | '<' | '<=' | '==' | '!=';
 
 
 // Statements within line
@@ -111,7 +112,7 @@ explist: exp (COMMA exp);
 
 
 
-exp: value 
+exp: value
       | arithmeticOperation
       | conditionalOperation
       | printOperation
@@ -145,8 +146,8 @@ logicalPrimary: value
               | LPAR conditionalOperation RPAR
               | NOT logicalPrimary
               ;
-value: IDENTIFIER 
-       | NUMBER 
-       | BOOLEAN 
-       | STRING	 
-       ; 
+value: IDENTIFIER
+       | NUMBER
+       | BOOLEAN
+       | STRING
+       ;
