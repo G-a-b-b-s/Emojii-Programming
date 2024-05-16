@@ -3,8 +3,6 @@
     "NUMBER"     : "🔠[0-9]+🔠",                        # Numeric literals
     "STRING"     : "✍️[A-za-z0-9-_\]✍️",                # String literals
     "NEWLINE"    : "🗽",                                 # Newline tokens
-    "INDENT"     : "⏭️",                                 # Indentation tokens
-    "DEDENT"     : "⏮️",                                 # Dedentation tokens
     "PLUS"       : "➕",                                 # Addition operator
     "MINUS"      : "➖",                                 # Subtraction operator
     "MULTIPLY"   : "✖️",                                 # Multiplication operator
