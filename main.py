@@ -7,6 +7,7 @@ from Supplier.GrammarParser import GrammarParser
 from EmojiHandler.EmojiReader import EmojiReader
 from gen.kolejnaProbaLexer import kolejnaProbaLexer
 from gen.kolejnaProbaParser import  kolejnaProbaParser
+from gen.kolejnaProbaListener import kolejnaProbaListener
 
 def print_tokens(lexer):
     lexer.reset()
@@ -20,6 +21,41 @@ def print_tokens(lexer):
     tokens_string = '\n'.join(tokens)
     with open('tokens.txt', 'w', encoding='utf-8') as file:
         file.write(tokens_string)
+
+class MyListener(kolejnaProbaListener):
+    def __init__(self, output_file):
+        self.output_file = output_file
+        self.output_buffer = []
+
+    def enterPrint_stmt(self, ctx: kolejnaProbaParser.Print_stmtContext):
+        self.output_buffer.append("print(")
+
+    def exitPrint_stmt(self, ctx: kolejnaProbaParser.Print_stmtContext):
+        self.output_buffer.append(")\n")
+
+    def enterArithmeticOperation(self, ctx: kolejnaProbaParser.ArithmeticOperationContext):
+        if ctx.getChild(1) is not None:
+            op_token = ctx.getChild(1).getText()
+            operator = {
+                ':heavy_plus_sign:': '+',
+                ':heavy_minus_sign:': '-',
+                ':heavy_multiplication_x:': '*',
+                ':heavy_division_sign:': '/',
+            }.get(op_token, op_token)
+            self.output_buffer.append(operator)
+
+    def enterValue(self, ctx: kolejnaProbaParser.ValueContext):
+        value_token = ctx.getText()
+        # Mapowanie wartości z gramatyki emoji na odpowiedniki w Pythonie
+        value_map = {
+            ':thumbsup:': 'True',
+            ':thumbsdown:': 'False',
+        }
+        self.output_buffer.append(value_map.get(value_token, value_token))
+
+    def save_output(self):
+        with open(self.output_file, "w") as file:
+            file.write("".join(self.output_buffer))
 
 
 class TreePrinterListener(ParseTreeListener):
@@ -88,14 +124,21 @@ def main():
     tree = parser.start()
 
     #Konstrukcja drzewa
-
-    printer = TreePrinterListener(parser.ruleNames)
+    result_file = 'result.py'
+    listener = MyListener(result_file)
     walker = ParseTreeWalker()
-    walker.walk(printer, tree)
-    formatted_tree = printer.getFormattedTree()
-    with open('Results/parsing_tree.txt', 'w', encoding='utf-8') as file:
-        file.write(formatted_tree)
-    printer.saveGraph('Results/dot_parsing_tree')
+    walker.walk(listener, tree)
+    listener.save_output()
+    # printer = TreePrinterListener(parser.ruleNames)
+    #
+    # walker = ParseTreeWalker()
+    # walker.walk(printer, tree)
+    #
+    # formatted_tree = printer.getFormattedTree()
+    # with open('Results/parsing_tree.txt', 'w', encoding='utf-8') as file:
+    #     file.write(formatted_tree)
+    # printer.saveGraph('Results/dot_parsing_tree')
+
 
 
 if __name__ == '__main__':

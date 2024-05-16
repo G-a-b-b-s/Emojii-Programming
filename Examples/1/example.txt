@@ -1,0 +1,2 @@
+:bulb: add_numbers:last_quarter_moon_with_face:a :paperclip: b:first_quarter_moon_with_face::paperclips:
+    :printer::last_quarter_moon_with_face:a:heavy_plus_sign:b:first_quarter_moon_with_face:

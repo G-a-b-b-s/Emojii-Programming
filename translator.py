@@ -8,3 +8,6 @@ def translator(input_file, output_file):
     rendered = emojis.decode(file_content)
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(rendered)
+
+
+print(emojis.decode(":bulb: add_numbers:last_quarter_moon_with_face:a :paperclip: b:first_quarter_moon_with_face::paperclips:"))

@@ -20,7 +20,7 @@ RSQB        : ':rightwards_hand:';
 COMMA       : ':paperclip:';
 COLON       : ':paperclips:';
 SEMI        : ':pushpin:';
-QUOTE       : ':clapper:';
+//QUOTE       : ':clapper:';
 
 OR          : ':female_detective:';
 AND         : ':two_women_holding_hands:';
@@ -83,7 +83,7 @@ import_list: import_name (COLON import_name)*;
 import_name: IDENTIFIER (AS IDENTIFIER)?;
 try_stmt: TRY COLON stmt except_clause ;
 except_clause: EXCEPT IDENTIFIER COLON stmt ;
-print_stmt: PRINT LPAR exp RPAR;
+print_stmt: PRINT LPAR exp RPAR WS?;
 multiple_assignment_stmt: assignment_stmt (COMMA assignment_stmt)?;
 raise_stmt: RAISE exception_expr;
 
@@ -127,7 +127,7 @@ term: factor
 factor: value
       | '(' exp ')'
       ;
-printOperation: STRING COMMA exp ;
+printOperation: STRING COMMA exp;
 conditionalOperation: logicalTerm
             | conditionalOperation CONDITION_OP logicalTerm;
 

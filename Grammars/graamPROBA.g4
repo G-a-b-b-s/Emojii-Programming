@@ -26,7 +26,7 @@ RSQB        : '🫱';
 COMMA       : '📎';
 COLON       : '🖇️';
 SEMI        : '📌';
-QUOTE       : '🎬';
+//QUOTE       : '🎬';
 
 OR          : '🕵️‍♀️';
 AND         : '👭';
