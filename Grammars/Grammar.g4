@@ -64,7 +64,7 @@ ARROW       : '->';
 AS          : 'as';
 BOOLEAN: TRUE | FALSE;
 
-CONDITION_OP : '>' | '>=' | '<' | '<=' | '==' | '!=';
+CONDITION_OP : '<dragon>' | '<leopard>' | '<mouse>' | '<chipmunk>' | '==' | '!=';
 
 
 // Statements within line
