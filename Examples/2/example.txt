@@ -1,0 +1,6 @@
+:question::last_quarter_moon_with_face:a:dragon:b:first_quarter_moon_with_face::paperclips:
+    :printer::last_quarter_moon_with_face:"a wieksze od b":first_quarter_moon_with_face:
+:grey_question::last_quarter_moon_with_face:a:mouse2:b:first_quarter_moon_with_face::paperclips:
+    :printer::last_quarter_moon_with_face:"a mniejsze od b":first_quarter_moon_with_face:
+:grey_exclamation::paperclips:
+    :printer::last_quarter_moon_with_face:"a i b sa rowne":first_quarter_moon_with_face:
