@@ -33,7 +33,7 @@ class EmojiTranslatorGUI:
 
         self.translate_button = Button(self.root, text="✨ Make magic happen! ✨", command=self.translate_code,
                                        bg="#d9b99b", fg="#000000", font=("Helvetica", 12, "bold"))
-        self.translate_button.grid(row=2, column=0, padx=10, pady=10)
+        self.translate_button.grid(row=2, column=0,columnspan=2, padx=30, pady=10)
 
         self.output_label = Label(self.root, text="💻 Your code", bg="#eed9c4", fg="#000000",
                                   font=("Helvetica", 14, "bold"))
@@ -43,13 +43,7 @@ class EmojiTranslatorGUI:
                                                      fg="#dcdcdc", insertbackground="#dcdcdc", font=("Consolas", 12))
         self.output_text.grid(row=1, column=1, padx=10, pady=10)
 
-        self.error_label = Label(self.root, text="⚠️ Messages", bg="#eed9c4", fg="#000000",
-                                 font=("Helvetica", 14, "bold"))
-        self.error_label.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
-        self.error_text = scrolledtext.ScrolledText(self.root, width=100, height=5, wrap=WORD, bg="#1e1e1e",
-                                                    fg="#dcdcdc", insertbackground="#dcdcdc", font=("Consolas", 12))
-        self.error_text.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
     def translate_code(self):
         input_code = self.input_text.get("1.0", END)
         try:
