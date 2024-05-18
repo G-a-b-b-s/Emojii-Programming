@@ -1,20 +1,20 @@
 **Token List:**
-    "IDENTIFIER" : "🔠[A-Za-z]+[A-za-z0-9]*🔠",         # Identifiers (variables, function names, etc.)
-    "NUMBER"     : "🔠[0-9]+🔠",                        # Numeric literals
-    "STRING"     : "✍️[A-za-z0-9-_\]✍️",                # String literals
+    "IDENTIFIER" : "[A-Za-z]+[A-za-z0-9]*",         # Identifiers (variables, function names, etc.)
+    "NUMBER"     : "[0-9]+{.}?[0-9]+",                        # Numeric literals
+    "STRING"     : "️ " [A-za-z0-9-_\]" ",                # String literals
     "NEWLINE"    : "🗽",                                 # Newline tokens
     "PLUS"       : "➕",                                 # Addition operator
     "MINUS"      : "➖",                                 # Subtraction operator
     "MULTIPLY"   : "✖️",                                 # Multiplication operator
     "DIVIDE"     : "➗",                                 # Division operator
-    "EQUAL"      : "🟰",                                 # Assignment operator 
+    "EQUAL"      : "🟰",                                 # Assignment operator
     "GREATER"    : "🐉",                                   # Greater operator
     "SMALLER"    : "🐁",                                   # Smaller operator
     "EGREATER"   : "🐆",                                  # GreaterOrEqual operator
     "ESMALLER"   : "🐿️",                                  # SmallerOrEqual operator
     "MOD"        : "%",                                   # Modulo
-    "LPAR"       : "🫷",                                 # Left parenthesis
-    "RPAR"       : "🫸",                                 # Right parenthesis
+    "LPAR"       : "🌜",                                 # Left parenthesis
+    "RPAR"       : "🌛",                                 # Right parenthesis
     "LSQB"       : "🫲",                                 # Left square bracket
     "RSQB"       : "🫱",                                 # Right square bracket
     "COMMA"      : "📎",                                 # Comma

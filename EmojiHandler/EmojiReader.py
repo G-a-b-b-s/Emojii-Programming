@@ -20,7 +20,7 @@ class EmojiReader:
         Converts the text read from the file, replacing emojis with their descriptions.
     """
 
-    def __init__(self, path):
+    def __init__(self, path=None):
         """
         Constructs all the necessary attributes for the EmojiReader object.
 
@@ -66,8 +66,12 @@ class EmojiReader:
         emoji_dict['🖇️']=':'
         return emoji_dict
 
-    def replace_words_with_dict_values(self):
-        lines= self.read(self.path)
+    def replace_words_with_dict_values(self, text = None):
+        if text is None:
+            path = self.path
+            lines= self.read(path)
+        else:
+            lines = text.splitlines()
         dictionary = self.returnDict()
         # Iterate over elements and replace if found in the dictionary
         replaced_text = []

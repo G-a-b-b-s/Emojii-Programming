@@ -16,7 +16,7 @@ def print_tokens(lexer):
         used_token_types.append(lexer.symbolicNames[token.type])
     lexer.reset()
     tokens_string = '\n'.join(tokens)
-    with open('tokens.txt', 'w', encoding='utf-8') as file:
+    with open('Results/tokens.txt', 'w', encoding='utf-8') as file:
         file.write(tokens_string)
 
 
@@ -63,9 +63,14 @@ class TreePrinterListener(ParseTreeListener):
 
 
 def main():
-    #Tu wpisz ścieżkę do pliku, który chcesz przetworzyć albo wykorzystaj jeden z przykładowych plików
-    input_file = 'Examples/1/originalExample.txt'
-    output_file = 'Examples/1/example.txt'
+
+    #Tu wpisz ścieżkę do pliku, który chcesz przetworzyć
+    # albo wykorzystaj jeden z przykładowych plików z przedrostkiem original
+    input_file = 'Examples/2/originalExample.txt'
+
+    # Tu wpisz ścieżkę do pliku, do którego chcesz zapisać emotikonowo przetworzony język
+    # albo wykorzystaj jeden z przykładowych plików
+    output_file = 'Examples/2/example.txt'
 
     EmojiReader(input_file).convertToFile(output_file)
 
