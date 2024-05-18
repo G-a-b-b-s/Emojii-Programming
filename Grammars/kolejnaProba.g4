@@ -13,6 +13,8 @@ GREATER     : ':dragon:';
 SMALLER     : ':mouse2:';
 EGREATER    : ':leopard:';
 ESMALLER    : ':chipmunk:';
+EEQUAL      : ':heavy_equals_sign::heavy_equals_sign:';
+ENOTEQ      : ':heavy_exclamation_mark::heavy_equals_sign:';
 LPAR        : ':last_quarter_moon_with_face:';
 RPAR        : ':first_quarter_moon_with_face:';
 LSQB        : ':leftwards_hand:';
@@ -29,8 +31,8 @@ COMMENT     : '/*' .*? '*/' -> skip;
 PRINT       : ':printer:';
 NOT         : ':heavy_exclamation_mark:';
 IF          : ':question:';
-ELSE        : ':heavy_exclamation_mark::heavy_exclamation_mark:';
-ELIF       : ':question::heavy_exclamation_mark:';
+ELSE        : ':grey_exclamation:';
+ELIF        : ':grey_question:';
 FOR         : ':gift:';
 IN          : ':mailbox_with_no_mail:';
 RANGE       : ':mountain_snow:';
@@ -62,10 +64,10 @@ TYPE : 'int' | 'string' | 'char' | 'bool' | 'float' | 'void';
 AS          : 'as';
 BOOLEAN: TRUE | FALSE;
 
-CONDITION_OP : '>' | '>=' | '<' | '<=' | '==' | '!=';
+CONDITION_OP: GREATER | EGREATER | SMALLER | ESMALLER | EQUAL | ENOTEQ;
+LOGICAL_OP: AND | OR;
 
-
-start : stmt+EOF;
+start : stmt+WS?EOF;
 stmt: (simple_stmt | compound_stmt);
 simple_stmt: assignment_stmt | import_stmt |try_stmt | declare_stmt | print_stmt | multiple_assignment_stmt | exp | exp COLON;
 
@@ -83,7 +85,7 @@ import_list: import_name (COLON import_name)*;
 import_name: IDENTIFIER (AS IDENTIFIER)?;
 try_stmt: TRY COLON stmt except_clause ;
 except_clause: EXCEPT IDENTIFIER COLON stmt ;
-print_stmt: PRINT LPAR exp RPAR WS?;
+print_stmt: PRINT LPAR exp RPAR;
 multiple_assignment_stmt: assignment_stmt (COMMA assignment_stmt)?;
 raise_stmt: RAISE exception_expr;
 
@@ -91,10 +93,12 @@ exception_expr: exception_name | exception_name exp;
 exception_name: IDENTIFIER;
 // Compound statements
 compound_stmt: if_stmt | while_stmt | for_stmt | function_def;
-if_stmt: IF conditionalOperation COLON WS func_body (ELIF conditionalOperation COLON WS func_body)* (ELSE conditionalOperation COLON WS func_body)?;
+if_stmt: IF LPAR conditionalOperation RPAR COLON func_body (elif_stmt)* (else_stmt)?;
+elif_stmt: ELIF LPAR conditionalOperation RPAR COLON func_body;
+else_stmt: ELSE COLON func_body;
 while_stmt: WHILE LPAR conditionalOperation RPAR COLON WS loop_stmt;
 for_stmt: FOR IDENTIFIER IN RANGE LPAR NUMBER RPAR COLON WS loop_stmt;
-function_def: DEF IDENTIFIER LPAR parameters? RPAR COLON func_body;
+function_def: DEF IDENTIFIER LPAR parameters? RPAR COLON (stmt| flow_stmt | return_stmt);
 
 parameters: typed_par (COMMA typed_par)*;
 typed_par: IDENTIFIER;
@@ -102,10 +106,12 @@ typed_par: IDENTIFIER;
 
 // Fillings for compound statements
 loop_stmt: (stmt | flow_stmt);
-func_body: (loop_stmt | return_stmt);
-flow_stmt: (BREAK | CONTINUE) WS;
-return_stmt: RETURN (explist)? WS;
+func_body: (loop_stmt | return_stmt | elif_stmt |else_stmt);
+flow_stmt: (BREAK | CONTINUE);
+return_stmt: RETURN (explist)?;
 explist: exp (COMMA exp);
+
+
 
 
 
@@ -127,18 +133,33 @@ term: factor
 factor: value
       | '(' exp ')'
       ;
-printOperation: STRING COMMA exp;
-conditionalOperation: logicalTerm
-            | conditionalOperation CONDITION_OP logicalTerm;
+printOperation: STRING COMMA exp | '(' STRING ')';
 
-logicalTerm: logicalFactor
-            | logicalTerm OR logicalFactor
-            ;
+
+//conditionalOperation: logicalTerm
+//                      | logicalTerm LOGICAL_OP conditionalOperation
+//                      ;
+//
+//logicalTerm: logicalFactor
+//            | logicalTerm CONDITION_OP logicalFactor
+//            ;
+//
+//logicalFactor: value
+//             | NOT logicalFactor
+//             ;
+
+conditionalOperation: logicalTerm CONDITION_OP logicalTerm
+                     | logicalTerm
+                     | logicalTerm GREATER logicalTerm
+                     | logicalTerm SMALLER logicalTerm;
+
 
 logicalFactor: logicalPrimary
              | logicalFactor AND logicalPrimary
              ;
-
+logicalTerm: logicalFactor
+            | logicalTerm OR logicalFactor
+            ;
 logicalPrimary: value
               | LPAR conditionalOperation RPAR
               | NOT logicalPrimary
@@ -147,4 +168,5 @@ value: IDENTIFIER
        | NUMBER
        | BOOLEAN
        | STRING
+       | WS
        ;

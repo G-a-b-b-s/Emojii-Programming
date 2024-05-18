@@ -93,7 +93,7 @@ exception_expr: exception_name | exception_name exp;
 exception_name: IDENTIFIER;
 // Compound statements
 compound_stmt: if_stmt | while_stmt | for_stmt | function_def;
-if_stmt: IF conditionalOperation COLON WS func_body (ELIF conditionalOperation COLON WS func_body)* (ELSE conditionalOperation COLON WS func_body)?;
+if_stmt: IF conditionalOperation COLON func_body (ELIF conditionalOperation COLON WS func_body)* (ELSE conditionalOperation COLON WS func_body)?;
 while_stmt: WHILE LPAR conditionalOperation RPAR COLON WS loop_stmt;
 for_stmt: FOR IDENTIFIER IN RANGE LPAR NUMBER RPAR COLON WS loop_stmt;
 function_def: DEF IDENTIFIER LPAR parameters? RPAR COLON WS func_body;
@@ -129,7 +129,8 @@ term: factor
 factor: value
       | '(' exp ')'
       ;
-printOperation: STRING COMMA exp ;
+printOperation: STRING COMMA exp
+       | '(' STRING ')';
 conditionalOperation: logicalTerm
             | conditionalOperation CONDITION_OP logicalTerm;
 
