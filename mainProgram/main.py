@@ -5,6 +5,9 @@ import graphviz
 from Compiler.GrammarLexer import GrammarLexer
 from Compiler.GrammarParser import GrammarParser
 from EmojiHandler.EmojiReader import EmojiReader
+from TreePrinterListener import TreePrinterListener
+from mainProgram.MyListener import MyListener
+
 
 def print_tokens(lexer):
     lexer.reset()
@@ -16,50 +19,9 @@ def print_tokens(lexer):
         used_token_types.append(lexer.symbolicNames[token.type])
     lexer.reset()
     tokens_string = '\n'.join(tokens)
-    with open('Results/tokens.txt', 'w', encoding='utf-8') as file:
+    with open('./Results/tokens.txt', 'w', encoding='utf-8') as file:
         file.write(tokens_string)
 
-
-class TreePrinterListener(ParseTreeListener):
-    def __init__(self, rule_names):
-        self.rule_names = rule_names
-        self.lines = []
-        self.level = 0
-        self.graph = graphviz.Digraph()
-        self.node_count = 0
-
-    def enterEveryRule(self, ctx):
-        rule_index = ctx.getRuleIndex()
-        rule_name = self.rule_names[rule_index] if self.rule_names else "Unknown rule"
-        self.lines.append(' ' * 2 * self.level + rule_name)
-
-        current_node_id = f"node{self.node_count}"
-        self.node_count += 1
-        self.graph.node(current_node_id, rule_name)
-
-        if self.level > 0:
-            parent_node_id = f"node{self.node_count - 2}"
-            self.graph.edge(parent_node_id, current_node_id)
-
-        ctx.node_id = current_node_id
-        self.level += 1
-
-    def exitEveryRule(self, ctx):
-        self.level -= 1
-
-    def visitTerminal(self, node):
-        parent_node_id = node.parentCtx.node_id
-        terminal_node_id = f"node{self.node_count}"
-        self.node_count += 1
-        terminal_name = node.getText()
-        self.graph.node(terminal_node_id, terminal_name, shape='box')
-        self.graph.edge(parent_node_id, terminal_node_id)
-
-    def getFormattedTree(self):
-        return "\n".join(self.lines)
-
-    def saveGraph(self, filename):
-        self.graph.render(filename, format='png', cleanup=True)
 
 
 def main():
@@ -71,6 +33,10 @@ def main():
     # Tu wpisz ścieżkę do pliku, do którego chcesz zapisać emotikonowo przetworzony język
     # albo wykorzystaj jeden z przykładowych plików
     output_file = 'Examples/2/example.txt'
+
+    # Tu wpisz ścieżkę do pliku, do którego chcesz zapisać przetłumaczony na kod język
+    # albo wykorzystaj jeden z przykładowych plików
+    result_file = 'Examples/2/result.py'
 
     EmojiReader(input_file).convertToFile(output_file)
 
@@ -84,12 +50,18 @@ def main():
     #Konstrukcja drzewa
 
     printer = TreePrinterListener(parser.ruleNames)
+
+    listener = MyListener(result_file)
     walker = ParseTreeWalker()
+    walker.walk(listener, tree)
     walker.walk(printer, tree)
     formatted_tree = printer.getFormattedTree()
     with open('Results/parsing_tree.txt', 'w', encoding='utf-8') as file:
         file.write(formatted_tree)
     printer.saveGraph('Results/dot_parsing_tree')
+
+    #Listener
+    listener.save_output()
 
 
 if __name__ == '__main__':

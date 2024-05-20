@@ -91,7 +91,6 @@ class EmojiReader:
 
     def convertToFile(self, pathToFile):
         replaced_text = self.replace_words_with_dict_values()
-        print(replaced_text)
         with open (pathToFile, 'w') as filename:
             filename.write(replaced_text)
 

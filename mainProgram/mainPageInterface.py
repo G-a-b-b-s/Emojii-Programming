@@ -7,6 +7,9 @@ from antlr4 import *
 from Compiler import GrammarLexer, GrammarParser, GrammarListener
 import MyErrorListener
 import EmojiHandler.EmojiReader
+from mainProgram.MyListener import MyListener
+from mainProgram.TreePrinterListener import TreePrinterListener
+from mainProgram.main import print_tokens
 
 
 class EmojiTranslatorGUI:
@@ -48,23 +51,18 @@ class EmojiTranslatorGUI:
         input_code = self.input_text.get("1.0", END)
         try:
             translated_code, errors = self.translate_emoji_code(input_code)
+
             if errors:
-                self.annotate_errors(errors)
-                error_messages = '\n'.join([f"line {line}:{column} {msg}" for line, column, msg in errors])
-                self.error_text.delete("1.0", END)
-                self.error_text.insert("1.0", error_messages)
-            else:
-                self.error_text.delete("1.0", END)
-                self.error_text.insert("1.0", "Translation Successful")
                 self.output_text.delete("1.0", END)
-                self.output_text.insert("1.0", translated_code)
+            for elem in translated_code:
+                self.output_text.insert("1.0", elem)
         except Exception as e:
             messagebox.showerror("Error", str(e))
 
     def translate_emoji_code(self, code):
         emo = EmojiHandler.EmojiReader.EmojiReader()
         code_translated = emo.replace_words_with_dict_values(code)
-        input_stream = FileStream(code_translated, encoding='utf-8')
+        input_stream = InputStream(code_translated)
 
         lexer = GrammarLexer.GrammarLexer(input_stream)
         stream = CommonTokenStream(lexer)
@@ -78,10 +76,11 @@ class EmojiTranslatorGUI:
         if errors:
             return "", errors
         else:
-            listener = GrammarListener.GrammarListener()
+            listener = MyListener()
             walker = ParseTreeWalker()
             walker.walk(listener, tree)
-            return listener.code, []
+
+            return listener.output_buffer, []
 
     def signalize_errors(self, errors):
         self.input_text.tag_configure("error", background="yellow")
