@@ -70,7 +70,7 @@ CONDITION_OP : '>' | '>=' | '<' | '<=' | '==' | '!=';
 
 // Statements within line
 stmt: (simple_stmt | compound_stmt);
-simple_stmt: assignment_stmt | import_stmt |try_stmt | declare_stmt | print_stmt | multiple_assignment_stmt | exp | exp COLON;
+simple_stmt: assignment_stmt | import_stmt |try_stmt | declare_stmt | print_stmt | multiple_assignment_stmt |function_call | exp | exp COLON;
 
 assignment_stmt: IDENTIFIER EQUAL exp;
 
@@ -93,14 +93,20 @@ raise_stmt: RAISE exception_expr;
 exception_expr: exception_name | exception_name exp;
 exception_name: IDENTIFIER;
 // Compound statements
-compound_stmt: if_stmt | while_stmt | for_stmt | function_def;
-if_stmt: IF conditionalOperation COLON WS func_body (ELIF conditionalOperation COLON WS func_body)* (ELSE conditionalOperation COLON WS func_body)?;
+compound_stmt: if_stmt | elif_stmt|else_stmt| while_stmt | for_stmt | function_def;
+//if_stmt: IF conditionalOperation COLON WS func_body (ELIF conditionalOperation COLON WS func_body)* (ELSE conditionalOperation COLON WS func_body)?;
+if_stmt: IF LPAR conditionalOperation RPAR COLON func_body (elif_stmt)* (else_stmt)?;
+elif_stmt: ELIF LPAR conditionalOperation RPAR COLON func_body;
+else_stmt: ELSE COLON func_body;
+
 while_stmt: WHILE LPAR conditionalOperation RPAR COLON WS loop_stmt;
 for_stmt: FOR IDENTIFIER IN RANGE LPAR NUMBER RPAR COLON WS loop_stmt;
 function_def: DEF IDENTIFIER LPAR parameters? RPAR COLON WS func_body;
 
 parameters: typed_par (COMMA typed_par)*;
-typed_par: IDENTIFIER;
+typed_par: IDENTIFIER | NUMBER;
+
+function_call : IDENTIFIER LPAR parameters? RPAR ;
 
 
 // Fillings for compound statements

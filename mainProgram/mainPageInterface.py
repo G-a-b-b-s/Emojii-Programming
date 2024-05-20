@@ -1,5 +1,10 @@
 from tkinter.ttk import Progressbar
+import sys
+import os
 
+# Dodaj katalog główny projektu do sys.path
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(project_root)
 from antlr4.error.ErrorListener import ErrorListener
 from tkinter import *
 from tkinter import scrolledtext, messagebox

@@ -28,15 +28,15 @@ def main():
 
     #Tu wpisz ścieżkę do pliku, który chcesz przetworzyć
     # albo wykorzystaj jeden z przykładowych plików z przedrostkiem original
-    input_file = 'Examples/2/originalExample.txt'
+    input_file = 'Examples/4/originalExample.txt'
 
     # Tu wpisz ścieżkę do pliku, do którego chcesz zapisać emotikonowo przetworzony język
     # albo wykorzystaj jeden z przykładowych plików
-    output_file = 'Examples/2/example.txt'
+    output_file = 'Examples/4/example.txt'
 
     # Tu wpisz ścieżkę do pliku, do którego chcesz zapisać przetłumaczony na kod język
     # albo wykorzystaj jeden z przykładowych plików
-    result_file = 'Examples/2/result.py'
+    result_file = 'Examples/4/result.py'
 
     EmojiReader(input_file).convertToFile(output_file)
 
@@ -58,7 +58,7 @@ def main():
     formatted_tree = printer.getFormattedTree()
     with open('Results/parsing_tree.txt', 'w', encoding='utf-8') as file:
         file.write(formatted_tree)
-    printer.saveGraph('Results/dot_parsing_tree')
+    printer.saveGraph('Examples/4/dot_parsing_tree')
 
     #Listener
     listener.save_output()

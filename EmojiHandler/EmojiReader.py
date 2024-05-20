@@ -31,7 +31,7 @@ class EmojiReader:
         """
         self.path = path
 
-    def read(self, path="C:\\Users\\48735\\Desktop\\Kompilki\\Emojii-Programming\\EmojiHandler\\emojiList"):
+    def read(self, path="C:\\Users\\martyna\\PycharmProjects\\teoriaKompilatorow\\Emojii-Programming\\EmojiHandler\\emojiList"):
         """
         Reads the content of the file at the given path.
 
@@ -91,7 +91,7 @@ class EmojiReader:
 
     def convertToFile(self, pathToFile):
         replaced_text = self.replace_words_with_dict_values()
-        with open (pathToFile, 'w') as filename:
+        with open (pathToFile, 'w', encoding='utf-8') as filename:
             filename.write(replaced_text)
 
 
