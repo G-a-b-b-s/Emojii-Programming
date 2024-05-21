@@ -98,7 +98,7 @@ if_stmt: IF LPAR conditionalOperation RPAR COLON func_body (elif_stmt)* (else_st
 elif_stmt: ELIF LPAR conditionalOperation RPAR COLON func_body;
 else_stmt: ELSE COLON func_body;
 while_stmt: WHILE LPAR conditionalOperation RPAR COLON WS loop_stmt;
-for_stmt: FOR IDENTIFIER IN RANGE LPAR NUMBER RPAR COLON (WS)* loop_stmt;
+for_stmt: FOR IDENTIFIER IN RANGE LPAR NUMBER (COLON NUMBER)* RPAR COLON (WS)* loop_stmt;
 function_def: DEF IDENTIFIER LPAR parameters? RPAR COLON WS func_body;
 
 parameters: typed_par (COMMA typed_par)*;
@@ -107,8 +107,8 @@ function_call : IDENTIFIER LPAR parameters? RPAR ;
 
 
 // Fillings for compound statements
-loop_stmt: (stmt | flow_stmt);
-func_body: (loop_stmt | return_stmt);
+loop_stmt: (stmt | flow_stmt)+;
+func_body: loop_stmt | return_stmt;
 flow_stmt: (BREAK | CONTINUE) WS;
 return_stmt: RETURN (explist)? WS;
 explist: exp (COMMA exp);

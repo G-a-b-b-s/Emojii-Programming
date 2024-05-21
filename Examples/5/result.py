@@ -1,9 +1,7 @@
 if a>b:
-	a:
-	print()
-
-a<b:
-	a:
-	print()
+	print("a wieksze od b")
+elsifa<b:
+	print("a mniejsze od b")
 else:
-	print()
+	print("a i b sa rowne")
+

@@ -1,4 +1,4 @@
-# Generated from C:/Users/48735/Desktop/Kompilki/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
+# Generated from C:/Users/martyna/PycharmProjects/teoriaKompilatorow/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,57,407,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,57,416,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,
@@ -30,32 +30,33 @@ def serializedATN():
         19,1,19,1,19,1,19,5,19,221,8,19,10,19,12,19,224,9,19,1,19,3,19,227,
         8,19,1,20,1,20,1,20,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,1,22,
         1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,23,1,23,1,23,1,23,1,23,1,23,
-        1,23,1,23,1,23,5,23,257,8,23,10,23,12,23,260,9,23,1,23,1,23,1,24,
-        1,24,1,24,1,24,3,24,268,8,24,1,24,1,24,1,24,1,24,1,24,1,25,1,25,
-        1,25,5,25,278,8,25,10,25,12,25,281,9,25,1,26,1,26,1,27,1,27,1,27,
-        3,27,288,8,27,1,27,1,27,1,28,1,28,3,28,294,8,28,1,29,1,29,3,29,298,
-        8,29,1,30,1,30,1,30,1,31,1,31,3,31,305,8,31,1,31,1,31,1,32,1,32,
-        1,32,1,32,1,33,1,33,1,33,1,33,3,33,317,8,33,1,34,1,34,1,34,1,34,
-        1,34,1,34,1,34,1,34,1,34,5,34,328,8,34,10,34,12,34,331,9,34,1,35,
-        1,35,1,35,1,35,1,35,1,35,1,35,1,35,1,35,5,35,342,8,35,10,35,12,35,
-        345,9,35,1,36,1,36,1,36,1,36,1,36,3,36,352,8,36,1,37,1,37,1,37,1,
-        37,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,5,38,369,
-        8,38,10,38,12,38,372,9,38,1,39,1,39,1,39,1,39,1,39,1,39,5,39,380,
-        8,39,10,39,12,39,383,9,39,1,40,1,40,1,40,1,40,1,40,1,40,5,40,391,
-        8,40,10,40,12,40,394,9,40,1,41,1,41,1,41,1,41,1,41,1,41,1,41,3,41,
-        403,8,41,1,42,1,42,1,42,0,5,68,70,76,78,80,43,0,2,4,6,8,10,12,14,
+        1,23,1,23,5,23,256,8,23,10,23,12,23,259,9,23,1,23,1,23,1,23,5,23,
+        264,8,23,10,23,12,23,267,9,23,1,23,1,23,1,24,1,24,1,24,1,24,3,24,
+        275,8,24,1,24,1,24,1,24,1,24,1,24,1,25,1,25,1,25,5,25,285,8,25,10,
+        25,12,25,288,9,25,1,26,1,26,1,27,1,27,1,27,3,27,295,8,27,1,27,1,
+        27,1,28,1,28,4,28,301,8,28,11,28,12,28,302,1,29,1,29,3,29,307,8,
+        29,1,30,1,30,1,30,1,31,1,31,3,31,314,8,31,1,31,1,31,1,32,1,32,1,
+        32,1,32,1,33,1,33,1,33,1,33,3,33,326,8,33,1,34,1,34,1,34,1,34,1,
+        34,1,34,1,34,1,34,1,34,5,34,337,8,34,10,34,12,34,340,9,34,1,35,1,
+        35,1,35,1,35,1,35,1,35,1,35,1,35,1,35,5,35,351,8,35,10,35,12,35,
+        354,9,35,1,36,1,36,1,36,1,36,1,36,3,36,361,8,36,1,37,1,37,1,37,1,
+        37,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,1,38,5,38,378,
+        8,38,10,38,12,38,381,9,38,1,39,1,39,1,39,1,39,1,39,1,39,5,39,389,
+        8,39,10,39,12,39,392,9,39,1,40,1,40,1,40,1,40,1,40,1,40,5,40,400,
+        8,40,10,40,12,40,403,9,40,1,41,1,41,1,41,1,41,1,41,1,41,1,41,3,41,
+        412,8,41,1,42,1,42,1,42,0,5,68,70,76,78,80,43,0,2,4,6,8,10,12,14,
         16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,
         60,62,64,66,68,70,72,74,76,78,80,82,84,0,3,1,0,54,55,1,0,33,34,1,
-        0,53,56,411,0,87,1,0,0,0,2,95,1,0,0,0,4,108,1,0,0,0,6,110,1,0,0,
+        0,53,56,422,0,87,1,0,0,0,2,95,1,0,0,0,4,108,1,0,0,0,6,110,1,0,0,
         0,8,114,1,0,0,0,10,123,1,0,0,0,12,128,1,0,0,0,14,131,1,0,0,0,16,
         136,1,0,0,0,18,144,1,0,0,0,20,152,1,0,0,0,22,157,1,0,0,0,24,162,
         1,0,0,0,26,170,1,0,0,0,28,189,1,0,0,0,30,194,1,0,0,0,32,201,1,0,
         0,0,34,203,1,0,0,0,36,211,1,0,0,0,38,213,1,0,0,0,40,228,1,0,0,0,
-        42,235,1,0,0,0,44,239,1,0,0,0,46,247,1,0,0,0,48,263,1,0,0,0,50,274,
-        1,0,0,0,52,282,1,0,0,0,54,284,1,0,0,0,56,293,1,0,0,0,58,297,1,0,
-        0,0,60,299,1,0,0,0,62,302,1,0,0,0,64,308,1,0,0,0,66,316,1,0,0,0,
-        68,318,1,0,0,0,70,332,1,0,0,0,72,351,1,0,0,0,74,353,1,0,0,0,76,357,
-        1,0,0,0,78,373,1,0,0,0,80,384,1,0,0,0,82,402,1,0,0,0,84,404,1,0,
+        42,235,1,0,0,0,44,239,1,0,0,0,46,247,1,0,0,0,48,270,1,0,0,0,50,281,
+        1,0,0,0,52,289,1,0,0,0,54,291,1,0,0,0,56,300,1,0,0,0,58,306,1,0,
+        0,0,60,308,1,0,0,0,62,311,1,0,0,0,64,317,1,0,0,0,66,325,1,0,0,0,
+        68,327,1,0,0,0,70,341,1,0,0,0,72,360,1,0,0,0,74,362,1,0,0,0,76,366,
+        1,0,0,0,78,382,1,0,0,0,80,393,1,0,0,0,82,411,1,0,0,0,84,413,1,0,
         0,0,86,88,3,2,1,0,87,86,1,0,0,0,88,89,1,0,0,0,89,87,1,0,0,0,89,90,
         1,0,0,0,90,91,1,0,0,0,91,92,5,0,0,1,92,1,1,0,0,0,93,96,3,4,2,0,94,
         96,3,36,18,0,95,93,1,0,0,0,95,94,1,0,0,0,96,3,1,0,0,0,97,109,3,6,
@@ -104,53 +105,56 @@ def serializedATN():
         5,30,0,0,240,241,5,8,0,0,241,242,3,76,38,0,242,243,5,9,0,0,243,244,
         5,15,0,0,244,245,5,1,0,0,245,246,3,56,28,0,246,45,1,0,0,0,247,248,
         5,26,0,0,248,249,5,54,0,0,249,250,5,27,0,0,250,251,5,28,0,0,251,
-        252,5,8,0,0,252,253,5,55,0,0,253,254,5,9,0,0,254,258,5,15,0,0,255,
-        257,5,1,0,0,256,255,1,0,0,0,257,260,1,0,0,0,258,256,1,0,0,0,258,
-        259,1,0,0,0,259,261,1,0,0,0,260,258,1,0,0,0,261,262,3,56,28,0,262,
-        47,1,0,0,0,263,264,5,36,0,0,264,265,5,54,0,0,265,267,5,8,0,0,266,
-        268,3,50,25,0,267,266,1,0,0,0,267,268,1,0,0,0,268,269,1,0,0,0,269,
-        270,5,9,0,0,270,271,5,15,0,0,271,272,5,1,0,0,272,273,3,58,29,0,273,
-        49,1,0,0,0,274,279,3,52,26,0,275,276,5,14,0,0,276,278,3,52,26,0,
-        277,275,1,0,0,0,278,281,1,0,0,0,279,277,1,0,0,0,279,280,1,0,0,0,
-        280,51,1,0,0,0,281,279,1,0,0,0,282,283,7,0,0,0,283,53,1,0,0,0,284,
-        285,5,54,0,0,285,287,5,8,0,0,286,288,3,50,25,0,287,286,1,0,0,0,287,
-        288,1,0,0,0,288,289,1,0,0,0,289,290,5,9,0,0,290,55,1,0,0,0,291,294,
-        3,2,1,0,292,294,3,60,30,0,293,291,1,0,0,0,293,292,1,0,0,0,294,57,
-        1,0,0,0,295,298,3,56,28,0,296,298,3,62,31,0,297,295,1,0,0,0,297,
-        296,1,0,0,0,298,59,1,0,0,0,299,300,7,1,0,0,300,301,5,1,0,0,301,61,
-        1,0,0,0,302,304,5,35,0,0,303,305,3,64,32,0,304,303,1,0,0,0,304,305,
-        1,0,0,0,305,306,1,0,0,0,306,307,5,1,0,0,307,63,1,0,0,0,308,309,3,
-        66,33,0,309,310,5,14,0,0,310,311,3,66,33,0,311,65,1,0,0,0,312,317,
-        3,84,42,0,313,317,3,68,34,0,314,317,3,76,38,0,315,317,3,74,37,0,
-        316,312,1,0,0,0,316,313,1,0,0,0,316,314,1,0,0,0,316,315,1,0,0,0,
-        317,67,1,0,0,0,318,319,6,34,-1,0,319,320,3,70,35,0,320,329,1,0,0,
-        0,321,322,10,2,0,0,322,323,5,2,0,0,323,328,3,70,35,0,324,325,10,
-        1,0,0,325,326,5,3,0,0,326,328,3,70,35,0,327,321,1,0,0,0,327,324,
-        1,0,0,0,328,331,1,0,0,0,329,327,1,0,0,0,329,330,1,0,0,0,330,69,1,
-        0,0,0,331,329,1,0,0,0,332,333,6,35,-1,0,333,334,3,72,36,0,334,343,
-        1,0,0,0,335,336,10,2,0,0,336,337,5,4,0,0,337,342,3,72,36,0,338,339,
-        10,1,0,0,339,340,5,5,0,0,340,342,3,72,36,0,341,335,1,0,0,0,341,338,
-        1,0,0,0,342,345,1,0,0,0,343,341,1,0,0,0,343,344,1,0,0,0,344,71,1,
-        0,0,0,345,343,1,0,0,0,346,352,3,84,42,0,347,348,5,8,0,0,348,349,
-        3,66,33,0,349,350,5,9,0,0,350,352,1,0,0,0,351,346,1,0,0,0,351,347,
-        1,0,0,0,352,73,1,0,0,0,353,354,5,56,0,0,354,355,5,14,0,0,355,356,
-        3,66,33,0,356,75,1,0,0,0,357,358,6,38,-1,0,358,359,3,78,39,0,359,
-        360,5,57,0,0,360,361,3,78,39,0,361,370,1,0,0,0,362,363,10,1,0,0,
-        363,364,5,57,0,0,364,369,3,76,38,2,365,366,10,2,0,0,366,367,5,57,
-        0,0,367,369,3,78,39,0,368,362,1,0,0,0,368,365,1,0,0,0,369,372,1,
-        0,0,0,370,368,1,0,0,0,370,371,1,0,0,0,371,77,1,0,0,0,372,370,1,0,
-        0,0,373,374,6,39,-1,0,374,375,3,80,40,0,375,381,1,0,0,0,376,377,
-        10,1,0,0,377,378,5,18,0,0,378,380,3,80,40,0,379,376,1,0,0,0,380,
-        383,1,0,0,0,381,379,1,0,0,0,381,382,1,0,0,0,382,79,1,0,0,0,383,381,
-        1,0,0,0,384,385,6,40,-1,0,385,386,3,82,41,0,386,392,1,0,0,0,387,
-        388,10,1,0,0,388,389,5,19,0,0,389,391,3,82,41,0,390,387,1,0,0,0,
-        391,394,1,0,0,0,392,390,1,0,0,0,392,393,1,0,0,0,393,81,1,0,0,0,394,
-        392,1,0,0,0,395,403,3,84,42,0,396,397,5,8,0,0,397,398,3,76,38,0,
-        398,399,5,9,0,0,399,403,1,0,0,0,400,401,5,22,0,0,401,403,3,82,41,
-        0,402,395,1,0,0,0,402,396,1,0,0,0,402,400,1,0,0,0,403,83,1,0,0,0,
-        404,405,7,2,0,0,405,85,1,0,0,0,34,89,95,108,120,126,141,149,155,
-        170,177,186,192,201,211,222,226,258,267,279,287,293,297,304,316,
-        327,329,341,343,351,368,370,381,392,402
+        252,5,8,0,0,252,257,5,55,0,0,253,254,5,15,0,0,254,256,5,55,0,0,255,
+        253,1,0,0,0,256,259,1,0,0,0,257,255,1,0,0,0,257,258,1,0,0,0,258,
+        260,1,0,0,0,259,257,1,0,0,0,260,261,5,9,0,0,261,265,5,15,0,0,262,
+        264,5,1,0,0,263,262,1,0,0,0,264,267,1,0,0,0,265,263,1,0,0,0,265,
+        266,1,0,0,0,266,268,1,0,0,0,267,265,1,0,0,0,268,269,3,56,28,0,269,
+        47,1,0,0,0,270,271,5,36,0,0,271,272,5,54,0,0,272,274,5,8,0,0,273,
+        275,3,50,25,0,274,273,1,0,0,0,274,275,1,0,0,0,275,276,1,0,0,0,276,
+        277,5,9,0,0,277,278,5,15,0,0,278,279,5,1,0,0,279,280,3,58,29,0,280,
+        49,1,0,0,0,281,286,3,52,26,0,282,283,5,14,0,0,283,285,3,52,26,0,
+        284,282,1,0,0,0,285,288,1,0,0,0,286,284,1,0,0,0,286,287,1,0,0,0,
+        287,51,1,0,0,0,288,286,1,0,0,0,289,290,7,0,0,0,290,53,1,0,0,0,291,
+        292,5,54,0,0,292,294,5,8,0,0,293,295,3,50,25,0,294,293,1,0,0,0,294,
+        295,1,0,0,0,295,296,1,0,0,0,296,297,5,9,0,0,297,55,1,0,0,0,298,301,
+        3,2,1,0,299,301,3,60,30,0,300,298,1,0,0,0,300,299,1,0,0,0,301,302,
+        1,0,0,0,302,300,1,0,0,0,302,303,1,0,0,0,303,57,1,0,0,0,304,307,3,
+        56,28,0,305,307,3,62,31,0,306,304,1,0,0,0,306,305,1,0,0,0,307,59,
+        1,0,0,0,308,309,7,1,0,0,309,310,5,1,0,0,310,61,1,0,0,0,311,313,5,
+        35,0,0,312,314,3,64,32,0,313,312,1,0,0,0,313,314,1,0,0,0,314,315,
+        1,0,0,0,315,316,5,1,0,0,316,63,1,0,0,0,317,318,3,66,33,0,318,319,
+        5,14,0,0,319,320,3,66,33,0,320,65,1,0,0,0,321,326,3,84,42,0,322,
+        326,3,68,34,0,323,326,3,76,38,0,324,326,3,74,37,0,325,321,1,0,0,
+        0,325,322,1,0,0,0,325,323,1,0,0,0,325,324,1,0,0,0,326,67,1,0,0,0,
+        327,328,6,34,-1,0,328,329,3,70,35,0,329,338,1,0,0,0,330,331,10,2,
+        0,0,331,332,5,2,0,0,332,337,3,70,35,0,333,334,10,1,0,0,334,335,5,
+        3,0,0,335,337,3,70,35,0,336,330,1,0,0,0,336,333,1,0,0,0,337,340,
+        1,0,0,0,338,336,1,0,0,0,338,339,1,0,0,0,339,69,1,0,0,0,340,338,1,
+        0,0,0,341,342,6,35,-1,0,342,343,3,72,36,0,343,352,1,0,0,0,344,345,
+        10,2,0,0,345,346,5,4,0,0,346,351,3,72,36,0,347,348,10,1,0,0,348,
+        349,5,5,0,0,349,351,3,72,36,0,350,344,1,0,0,0,350,347,1,0,0,0,351,
+        354,1,0,0,0,352,350,1,0,0,0,352,353,1,0,0,0,353,71,1,0,0,0,354,352,
+        1,0,0,0,355,361,3,84,42,0,356,357,5,8,0,0,357,358,3,66,33,0,358,
+        359,5,9,0,0,359,361,1,0,0,0,360,355,1,0,0,0,360,356,1,0,0,0,361,
+        73,1,0,0,0,362,363,5,56,0,0,363,364,5,14,0,0,364,365,3,66,33,0,365,
+        75,1,0,0,0,366,367,6,38,-1,0,367,368,3,78,39,0,368,369,5,57,0,0,
+        369,370,3,78,39,0,370,379,1,0,0,0,371,372,10,1,0,0,372,373,5,57,
+        0,0,373,378,3,76,38,2,374,375,10,2,0,0,375,376,5,57,0,0,376,378,
+        3,78,39,0,377,371,1,0,0,0,377,374,1,0,0,0,378,381,1,0,0,0,379,377,
+        1,0,0,0,379,380,1,0,0,0,380,77,1,0,0,0,381,379,1,0,0,0,382,383,6,
+        39,-1,0,383,384,3,80,40,0,384,390,1,0,0,0,385,386,10,1,0,0,386,387,
+        5,18,0,0,387,389,3,80,40,0,388,385,1,0,0,0,389,392,1,0,0,0,390,388,
+        1,0,0,0,390,391,1,0,0,0,391,79,1,0,0,0,392,390,1,0,0,0,393,394,6,
+        40,-1,0,394,395,3,82,41,0,395,401,1,0,0,0,396,397,10,1,0,0,397,398,
+        5,19,0,0,398,400,3,82,41,0,399,396,1,0,0,0,400,403,1,0,0,0,401,399,
+        1,0,0,0,401,402,1,0,0,0,402,81,1,0,0,0,403,401,1,0,0,0,404,412,3,
+        84,42,0,405,406,5,8,0,0,406,407,3,76,38,0,407,408,5,9,0,0,408,412,
+        1,0,0,0,409,410,5,22,0,0,410,412,3,82,41,0,411,404,1,0,0,0,411,405,
+        1,0,0,0,411,409,1,0,0,0,412,83,1,0,0,0,413,414,7,2,0,0,414,85,1,
+        0,0,0,36,89,95,108,120,126,141,149,155,170,177,186,192,201,211,222,
+        226,257,265,274,286,294,300,302,306,313,325,336,338,350,352,360,
+        377,379,390,401,411
     ]
 
 class GrammarParser ( Parser ):
@@ -1991,14 +1995,20 @@ class GrammarParser ( Parser ):
         def LPAR(self):
             return self.getToken(GrammarParser.LPAR, 0)
 
-        def NUMBER(self):
-            return self.getToken(GrammarParser.NUMBER, 0)
+        def NUMBER(self, i:int=None):
+            if i is None:
+                return self.getTokens(GrammarParser.NUMBER)
+            else:
+                return self.getToken(GrammarParser.NUMBER, i)
 
         def RPAR(self):
             return self.getToken(GrammarParser.RPAR, 0)
 
-        def COLON(self):
-            return self.getToken(GrammarParser.COLON, 0)
+        def COLON(self, i:int=None):
+            if i is None:
+                return self.getTokens(GrammarParser.COLON)
+            else:
+                return self.getToken(GrammarParser.COLON, i)
 
         def loop_stmt(self):
             return self.getTypedRuleContext(GrammarParser.Loop_stmtContext,0)
@@ -2034,6 +2044,7 @@ class GrammarParser ( Parser ):
 
         localctx = GrammarParser.For_stmtContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_for_stmt)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 247
@@ -2048,22 +2059,34 @@ class GrammarParser ( Parser ):
             self.match(GrammarParser.LPAR)
             self.state = 252
             self.match(GrammarParser.NUMBER)
-            self.state = 253
-            self.match(GrammarParser.RPAR)
-            self.state = 254
-            self.match(GrammarParser.COLON)
-            self.state = 258
+            self.state = 257
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,16,self._ctx)
+            _la = self._input.LA(1)
+            while _la==15:
+                self.state = 253
+                self.match(GrammarParser.COLON)
+                self.state = 254
+                self.match(GrammarParser.NUMBER)
+                self.state = 259
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 260
+            self.match(GrammarParser.RPAR)
+            self.state = 261
+            self.match(GrammarParser.COLON)
+            self.state = 265
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,17,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 255
+                    self.state = 262
                     self.match(GrammarParser.WS) 
-                self.state = 260
+                self.state = 267
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,16,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,17,self._ctx)
 
-            self.state = 261
+            self.state = 268
             self.loop_stmt()
         except RecognitionException as re:
             localctx.exception = re
@@ -2134,27 +2157,27 @@ class GrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 263
+            self.state = 270
             self.match(GrammarParser.DEF)
-            self.state = 264
+            self.state = 271
             self.match(GrammarParser.IDENTIFIER)
-            self.state = 265
+            self.state = 272
             self.match(GrammarParser.LPAR)
-            self.state = 267
+            self.state = 274
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==54 or _la==55:
-                self.state = 266
+                self.state = 273
                 self.parameters()
 
 
-            self.state = 269
+            self.state = 276
             self.match(GrammarParser.RPAR)
-            self.state = 270
+            self.state = 277
             self.match(GrammarParser.COLON)
-            self.state = 271
+            self.state = 278
             self.match(GrammarParser.WS)
-            self.state = 272
+            self.state = 279
             self.func_body()
         except RecognitionException as re:
             localctx.exception = re
@@ -2212,17 +2235,17 @@ class GrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 274
+            self.state = 281
             self.typed_par()
-            self.state = 279
+            self.state = 286
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==14:
-                self.state = 275
+                self.state = 282
                 self.match(GrammarParser.COMMA)
-                self.state = 276
+                self.state = 283
                 self.typed_par()
-                self.state = 281
+                self.state = 288
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -2275,7 +2298,7 @@ class GrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 282
+            self.state = 289
             _la = self._input.LA(1)
             if not(_la==54 or _la==55):
                 self._errHandler.recoverInline(self)
@@ -2338,19 +2361,19 @@ class GrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 284
+            self.state = 291
             self.match(GrammarParser.IDENTIFIER)
-            self.state = 285
+            self.state = 292
             self.match(GrammarParser.LPAR)
-            self.state = 287
+            self.state = 294
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==54 or _la==55:
-                self.state = 286
+                self.state = 293
                 self.parameters()
 
 
-            self.state = 289
+            self.state = 296
             self.match(GrammarParser.RPAR)
         except RecognitionException as re:
             localctx.exception = re
@@ -2368,12 +2391,18 @@ class GrammarParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def stmt(self):
-            return self.getTypedRuleContext(GrammarParser.StmtContext,0)
+        def stmt(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(GrammarParser.StmtContext)
+            else:
+                return self.getTypedRuleContext(GrammarParser.StmtContext,i)
 
 
-        def flow_stmt(self):
-            return self.getTypedRuleContext(GrammarParser.Flow_stmtContext,0)
+        def flow_stmt(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(GrammarParser.Flow_stmtContext)
+            else:
+                return self.getTypedRuleContext(GrammarParser.Flow_stmtContext,i)
 
 
         def getRuleIndex(self):
@@ -2402,19 +2431,31 @@ class GrammarParser ( Parser ):
         self.enterRule(localctx, 56, self.RULE_loop_stmt)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 293
+            self.state = 300 
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [1, 8, 21, 22, 23, 24, 25, 26, 30, 36, 39, 44, 49, 53, 54, 55, 56]:
-                self.state = 291
-                self.stmt()
-                pass
-            elif token in [33, 34]:
-                self.state = 292
-                self.flow_stmt()
-                pass
-            else:
-                raise NoViableAltException(self)
+            _alt = 1
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
+                    self.state = 300
+                    self._errHandler.sync(self)
+                    token = self._input.LA(1)
+                    if token in [1, 8, 21, 22, 23, 24, 25, 26, 30, 36, 39, 44, 49, 53, 54, 55, 56]:
+                        self.state = 298
+                        self.stmt()
+                        pass
+                    elif token in [33, 34]:
+                        self.state = 299
+                        self.flow_stmt()
+                        pass
+                    else:
+                        raise NoViableAltException(self)
+
+
+                else:
+                    raise NoViableAltException(self)
+                self.state = 302 
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2466,15 +2507,15 @@ class GrammarParser ( Parser ):
         self.enterRule(localctx, 58, self.RULE_func_body)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 297
+            self.state = 306
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1, 8, 21, 22, 23, 24, 25, 26, 30, 33, 34, 36, 39, 44, 49, 53, 54, 55, 56]:
-                self.state = 295
+                self.state = 304
                 self.loop_stmt()
                 pass
             elif token in [35]:
-                self.state = 296
+                self.state = 305
                 self.return_stmt()
                 pass
             else:
@@ -2532,14 +2573,14 @@ class GrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 299
+            self.state = 308
             _la = self._input.LA(1)
             if not(_la==33 or _la==34):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 300
+            self.state = 309
             self.match(GrammarParser.WS)
         except RecognitionException as re:
             localctx.exception = re
@@ -2594,17 +2635,17 @@ class GrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 302
+            self.state = 311
             self.match(GrammarParser.RETURN)
-            self.state = 304
+            self.state = 313
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & 135107988825309440) != 0):
-                self.state = 303
+                self.state = 312
                 self.explist()
 
 
-            self.state = 306
+            self.state = 315
             self.match(GrammarParser.WS)
         except RecognitionException as re:
             localctx.exception = re
@@ -2658,12 +2699,12 @@ class GrammarParser ( Parser ):
         self.enterRule(localctx, 64, self.RULE_explist)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 308
+            self.state = 317
             self.exp()
 
-            self.state = 309
+            self.state = 318
             self.match(GrammarParser.COMMA)
-            self.state = 310
+            self.state = 319
             self.exp()
         except RecognitionException as re:
             localctx.exception = re
@@ -2722,30 +2763,30 @@ class GrammarParser ( Parser ):
         localctx = GrammarParser.ExpContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_exp)
         try:
-            self.state = 316
+            self.state = 325
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,23,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,25,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 312
+                self.state = 321
                 self.value()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 313
+                self.state = 322
                 self.arithmeticOperation(0)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 314
+                self.state = 323
                 self.conditionalOperation(0)
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 315
+                self.state = 324
                 self.printOperation()
                 pass
 
@@ -2808,50 +2849,50 @@ class GrammarParser ( Parser ):
         self.enterRecursionRule(localctx, 68, self.RULE_arithmeticOperation, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 319
+            self.state = 328
             self.term(0)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 329
+            self.state = 338
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,25,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,27,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 327
+                    self.state = 336
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,24,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,26,self._ctx)
                     if la_ == 1:
                         localctx = GrammarParser.ArithmeticOperationContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_arithmeticOperation)
-                        self.state = 321
+                        self.state = 330
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 322
+                        self.state = 331
                         self.match(GrammarParser.PLUS)
-                        self.state = 323
+                        self.state = 332
                         self.term(0)
                         pass
 
                     elif la_ == 2:
                         localctx = GrammarParser.ArithmeticOperationContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_arithmeticOperation)
-                        self.state = 324
+                        self.state = 333
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                        self.state = 325
+                        self.state = 334
                         self.match(GrammarParser.MINUS)
-                        self.state = 326
+                        self.state = 335
                         self.term(0)
                         pass
 
              
-                self.state = 331
+                self.state = 340
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,25,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,27,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2911,50 +2952,50 @@ class GrammarParser ( Parser ):
         self.enterRecursionRule(localctx, 70, self.RULE_term, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 333
+            self.state = 342
             self.factor()
             self._ctx.stop = self._input.LT(-1)
-            self.state = 343
+            self.state = 352
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,27,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,29,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 341
+                    self.state = 350
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,26,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,28,self._ctx)
                     if la_ == 1:
                         localctx = GrammarParser.TermContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_term)
-                        self.state = 335
+                        self.state = 344
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 336
+                        self.state = 345
                         self.match(GrammarParser.MULTIPLY)
-                        self.state = 337
+                        self.state = 346
                         self.factor()
                         pass
 
                     elif la_ == 2:
                         localctx = GrammarParser.TermContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_term)
-                        self.state = 338
+                        self.state = 347
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                        self.state = 339
+                        self.state = 348
                         self.match(GrammarParser.DIVIDE)
-                        self.state = 340
+                        self.state = 349
                         self.factor()
                         pass
 
              
-                self.state = 345
+                self.state = 354
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,27,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,29,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3011,21 +3052,21 @@ class GrammarParser ( Parser ):
         localctx = GrammarParser.FactorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 72, self.RULE_factor)
         try:
-            self.state = 351
+            self.state = 360
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [53, 54, 55, 56]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 346
+                self.state = 355
                 self.value()
                 pass
             elif token in [8]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 347
+                self.state = 356
                 self.match(GrammarParser.LPAR)
-                self.state = 348
+                self.state = 357
                 self.exp()
-                self.state = 349
+                self.state = 358
                 self.match(GrammarParser.RPAR)
                 pass
             else:
@@ -3083,11 +3124,11 @@ class GrammarParser ( Parser ):
         self.enterRule(localctx, 74, self.RULE_printOperation)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 353
+            self.state = 362
             self.match(GrammarParser.STRING)
-            self.state = 354
+            self.state = 363
             self.match(GrammarParser.COMMA)
-            self.state = 355
+            self.state = 364
             self.exp()
         except RecognitionException as re:
             localctx.exception = re
@@ -3150,54 +3191,54 @@ class GrammarParser ( Parser ):
         self.enterRecursionRule(localctx, 76, self.RULE_conditionalOperation, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 358
+            self.state = 367
             self.logicalTerm(0)
-            self.state = 359
+            self.state = 368
             self.match(GrammarParser.CONDITION_OP)
-            self.state = 360
+            self.state = 369
             self.logicalTerm(0)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 370
+            self.state = 379
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,30,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,32,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 368
+                    self.state = 377
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,29,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,31,self._ctx)
                     if la_ == 1:
                         localctx = GrammarParser.ConditionalOperationContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_conditionalOperation)
-                        self.state = 362
+                        self.state = 371
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                        self.state = 363
+                        self.state = 372
                         self.match(GrammarParser.CONDITION_OP)
-                        self.state = 364
+                        self.state = 373
                         self.conditionalOperation(2)
                         pass
 
                     elif la_ == 2:
                         localctx = GrammarParser.ConditionalOperationContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_conditionalOperation)
-                        self.state = 365
+                        self.state = 374
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 366
+                        self.state = 375
                         self.match(GrammarParser.CONDITION_OP)
-                        self.state = 367
+                        self.state = 376
                         self.logicalTerm(0)
                         pass
 
              
-                self.state = 372
+                self.state = 381
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,30,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,32,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3254,12 +3295,12 @@ class GrammarParser ( Parser ):
         self.enterRecursionRule(localctx, 78, self.RULE_logicalTerm, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 374
+            self.state = 383
             self.logicalFactor(0)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 381
+            self.state = 390
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,31,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,33,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
@@ -3267,17 +3308,17 @@ class GrammarParser ( Parser ):
                     _prevctx = localctx
                     localctx = GrammarParser.LogicalTermContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_logicalTerm)
-                    self.state = 376
+                    self.state = 385
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 377
+                    self.state = 386
                     self.match(GrammarParser.OR)
-                    self.state = 378
+                    self.state = 387
                     self.logicalFactor(0) 
-                self.state = 383
+                self.state = 392
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,31,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,33,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3334,12 +3375,12 @@ class GrammarParser ( Parser ):
         self.enterRecursionRule(localctx, 80, self.RULE_logicalFactor, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 385
+            self.state = 394
             self.logicalPrimary()
             self._ctx.stop = self._input.LT(-1)
-            self.state = 392
+            self.state = 401
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,32,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,34,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
@@ -3347,17 +3388,17 @@ class GrammarParser ( Parser ):
                     _prevctx = localctx
                     localctx = GrammarParser.LogicalFactorContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_logicalFactor)
-                    self.state = 387
+                    self.state = 396
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 388
+                    self.state = 397
                     self.match(GrammarParser.AND)
-                    self.state = 389
+                    self.state = 398
                     self.logicalPrimary() 
-                self.state = 394
+                self.state = 403
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,32,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,34,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3421,28 +3462,28 @@ class GrammarParser ( Parser ):
         localctx = GrammarParser.LogicalPrimaryContext(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_logicalPrimary)
         try:
-            self.state = 402
+            self.state = 411
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [53, 54, 55, 56]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 395
+                self.state = 404
                 self.value()
                 pass
             elif token in [8]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 396
+                self.state = 405
                 self.match(GrammarParser.LPAR)
-                self.state = 397
+                self.state = 406
                 self.conditionalOperation(0)
-                self.state = 398
+                self.state = 407
                 self.match(GrammarParser.RPAR)
                 pass
             elif token in [22]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 400
+                self.state = 409
                 self.match(GrammarParser.NOT)
-                self.state = 401
+                self.state = 410
                 self.logicalPrimary()
                 pass
             else:
@@ -3503,7 +3544,7 @@ class GrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 404
+            self.state = 413
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 135107988821114880) != 0)):
                 self._errHandler.recoverInline(self)

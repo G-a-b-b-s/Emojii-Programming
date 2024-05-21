@@ -1,0 +1,19 @@
+💡 calculate_fibonacci 🌜 n 🌛 🖇️
+    ❓ 🌜 n 🟰 🟰 0 🌛 🖇️
+        🖨️ 🌜 "Input must be greater than 0" 🌛
+        🪃
+    ❓ 🌜 n 🟰 🟰 2 🌛 🖇️
+        🖨️ 🌜 n 🌛
+        🪃
+
+    a 🟰 0
+    b 🟰 1
+    🎁 i 📭 range 🌜 2, n ➕ 1 🌛 🖇️
+        temp 🟰 a ➕ b
+        a 🟰 b
+        b 🟰 temp
+        🖨️ 🌜 "Current Fibonacci value:" 📎 temp 🌛
+
+    🖨️ 🌜 "Fibonacci value is " 📎 b 🌛
+
+calculate_fibonacci 🌜 10 🌛
