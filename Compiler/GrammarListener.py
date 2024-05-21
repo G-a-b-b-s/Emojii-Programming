@@ -188,6 +188,24 @@ class GrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GrammarParser#elif_stmt.
+    def enterElif_stmt(self, ctx:GrammarParser.Elif_stmtContext):
+        pass
+
+    # Exit a parse tree produced by GrammarParser#elif_stmt.
+    def exitElif_stmt(self, ctx:GrammarParser.Elif_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by GrammarParser#else_stmt.
+    def enterElse_stmt(self, ctx:GrammarParser.Else_stmtContext):
+        pass
+
+    # Exit a parse tree produced by GrammarParser#else_stmt.
+    def exitElse_stmt(self, ctx:GrammarParser.Else_stmtContext):
+        pass
+
+
     # Enter a parse tree produced by GrammarParser#while_stmt.
     def enterWhile_stmt(self, ctx:GrammarParser.While_stmtContext):
         pass
@@ -230,6 +248,15 @@ class GrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by GrammarParser#typed_par.
     def exitTyped_par(self, ctx:GrammarParser.Typed_parContext):
+        pass
+
+
+    # Enter a parse tree produced by GrammarParser#function_call.
+    def enterFunction_call(self, ctx:GrammarParser.Function_callContext):
+        pass
+
+    # Exit a parse tree produced by GrammarParser#function_call.
+    def exitFunction_call(self, ctx:GrammarParser.Function_callContext):
         pass
 
 

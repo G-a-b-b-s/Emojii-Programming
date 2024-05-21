@@ -109,6 +109,16 @@ class GrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by GrammarParser#elif_stmt.
+    def visitElif_stmt(self, ctx:GrammarParser.Elif_stmtContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by GrammarParser#else_stmt.
+    def visitElse_stmt(self, ctx:GrammarParser.Else_stmtContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by GrammarParser#while_stmt.
     def visitWhile_stmt(self, ctx:GrammarParser.While_stmtContext):
         return self.visitChildren(ctx)
@@ -131,6 +141,11 @@ class GrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by GrammarParser#typed_par.
     def visitTyped_par(self, ctx:GrammarParser.Typed_parContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by GrammarParser#function_call.
+    def visitFunction_call(self, ctx:GrammarParser.Function_callContext):
         return self.visitChildren(ctx)
 
 
