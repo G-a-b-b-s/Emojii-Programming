@@ -51,17 +51,17 @@ class EmojiTranslatorGUI:
         input_code = self.input_text.get("1.0", END)
         try:
             translated_code, errors = self.translate_emoji_code(input_code)
-
             if errors:
                 self.output_text.delete("1.0", END)
-            for elem in translated_code:
-                self.output_text.insert("1.0", elem)
+
+            self.output_text.insert("1.0", ' '.join(translated_code))
         except Exception as e:
             messagebox.showerror("Error", str(e))
 
     def translate_emoji_code(self, code):
         emo = EmojiHandler.EmojiReader.EmojiReader()
         code_translated = emo.replace_words_with_dict_values(code)
+        print(code_translated)
         input_stream = InputStream(code_translated)
 
         lexer = GrammarLexer.GrammarLexer(input_stream)

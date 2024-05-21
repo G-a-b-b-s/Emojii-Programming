@@ -28,15 +28,15 @@ def main():
 
     #Tu wpisz ścieżkę do pliku, który chcesz przetworzyć
     # albo wykorzystaj jeden z przykładowych plików z przedrostkiem original
-    input_file = 'Examples/2/originalExample.txt'
+    input_file = 'Examples/5/originalExample.txt'
 
     # Tu wpisz ścieżkę do pliku, do którego chcesz zapisać emotikonowo przetworzony język
     # albo wykorzystaj jeden z przykładowych plików
-    output_file = 'Examples/2/example.txt'
+    output_file = 'Examples/5/example.txt'
 
     # Tu wpisz ścieżkę do pliku, do którego chcesz zapisać przetłumaczony na kod język
     # albo wykorzystaj jeden z przykładowych plików
-    result_file = 'Examples/2/result.py'
+    result_file = 'Examples/5/result.py'
 
     EmojiReader(input_file).convertToFile(output_file)
 

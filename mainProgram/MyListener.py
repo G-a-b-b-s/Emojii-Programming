@@ -69,16 +69,18 @@ class MyListener(GrammarListener):
         self.output_buffer.append("print(")
 
     def enterPrintOperation(self, ctx: GrammarParser.GrammarParser.PrintOperationContext):
-        if ctx.getChildCount() == 3:  # STRING COMMA exp
-            print("tekst w print op: ", ctx.getText())
+        print("W princie")
+        if ctx.STRING() and ctx.exp():
             string = ctx.STRING().getText()
             expression = ctx.exp().getText()
-            self.output_buffer.append(f"{string}, ")
-        elif ctx.getChildCount() == 3:  # '(' STRING ')'
+            self.output_buffer.append(f"{string}, {expression}")
+        elif ctx.STRING() and not ctx.exp():
             string = ctx.STRING().getText()
             self.output_buffer.append(f"{string}")
     def exitPrint_stmt(self, ctx: GrammarParser.GrammarParser.Print_stmtContext):
+        print("Po princie")
         self.output_buffer.append(")\n")
+        print("3")
 
     def enterArithmeticOperation(self, ctx: GrammarParser.GrammarParser.ArithmeticOperationContext):
          print("artimh op")
@@ -105,44 +107,43 @@ class MyListener(GrammarListener):
         self.output_buffer.append(f"while {condition}:\n\t")
 
     def enterIf_stmt(self, ctx: GrammarParser.GrammarParser.If_stmtContext):
-        print("if_stmst")
-        #print(ctx.getChild().getText())
-        val = self.tokens_map[ctx.getChild(0).getText()]
-
-        self.output_buffer.append(val+" ")
+        print("W ifie")
+        self.output_buffer.append("if ")
 
     def enterExp(self, ctx: GrammarParser.GrammarParser.ExpContext):
-        if not isinstance(ctx.getChild(0),GrammarParser.GrammarParser.PrintOperationContext) and not isinstance(ctx.getChild(0),GrammarParser.GrammarParser.ArithmeticOperationContext):
-            self.output_buffer.append(ctx.getText())
+        if ctx.children is not None and len(ctx.children) > 0:
+            if not isinstance(ctx.getChild(0), GrammarParser.GrammarParser.PrintOperationContext) and not isinstance(
+                    ctx.getChild(0), GrammarParser.GrammarParser.ArithmeticOperationContext) and not isinstance(
+                    ctx.getChild(0), GrammarParser.GrammarParser.ConditionalOperationContext)and not isinstance(
+                    ctx.getChild(0), GrammarParser.GrammarParser.ValueContext):
+                self.output_buffer.append(ctx.getText())
     def exitIf_stmt(self, ctx: GrammarParser.GrammarParser.If_stmtContext):
         self.output_buffer.append("\n")
 
-    # def enterElif_stmt(self, ctx:GrammarParser.GrammarParser.Elif_stmtContext):
-    #     print("elif stmst:")
-    #     print(ctx.getText())
-    #     self.output_buffer.append("elif ")
-    #
-    # def exitElif_stmt(self, ctx: GrammarParser.GrammarParser.Elif_stmtContext):
-    #     print("w exit elif")
-    #     self.output_buffer.append("")
-    #
-    # def enterElse_stmt(self, ctx: GrammarParser.GrammarParser.Else_stmtContext):
-    #     print('else stmt')
-    #     #print(ctx.getText())
-    #     self.output_buffer.append("else:\n\t")
+    def enterElif_stmt(self, ctx: GrammarParser.GrammarParser.Elif_stmtContext):
+        print("elif stmst:")
+        self.output_buffer.append("elif ")
+
+    def exitElif_stmt(self, ctx: GrammarParser.GrammarParser.Elif_stmtContext):
+        print("w exit elif")
+        self.output_buffer.append("\n")
+
+    def enterElse_stmt(self, ctx: GrammarParser.GrammarParser.Else_stmtContext):
+        print('else stmt')
+        self.output_buffer.append("else:\n\t")
     def enterConditionalOperation(self, ctx: GrammarParser.GrammarParser.ConditionalOperationContext):
         print("conditional op")
         text = ctx.getText().split(":")
         output = ""
-        #print(text)
+        print(text)
         for v in text:
             token = ":" + v + ":"
-            # print(token)
+            print(token)
             if token in self.tokens_map.keys():
                 output += self.tokens_map[token]
             else:
                 output += v
-        #print("output: ", output)
+        print("dodaje: ", output)
         self.output_buffer.append(output+":\n\t")
 
     def enterFunction_def(self, ctx):
@@ -150,6 +151,13 @@ class MyListener(GrammarListener):
         func_name = ctx.getChild(1).getText()
         params = self.params(ctx,3)
         self.output_buffer.append(f"def {func_name}({params}):\n\t")
+
+    def enterFunction_call(self, ctx: GrammarParser.GrammarParser.Function_callContext):
+        function_name = ctx.IDENTIFIER().getText()
+        arguments = [arg.getText() for arg in ctx.exp()]
+        mapped_args = ", ".join(arguments)  # Łączy argumenty funkcji jako stringi
+        print(mapped_args)
+        self.output_buffer.append(f"{function_name}({mapped_args})\n")
     def params(self,ctx, number):
         #print("w params")
         params = ctx.getChild(number).getText().split(':')
