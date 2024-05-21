@@ -134,8 +134,10 @@ factor: value
       | '(' exp ')'
       ;
 printOperation: STRING COMMA exp ;
-conditionalOperation: logicalTerm
-            | conditionalOperation CONDITION_OP logicalTerm;
+conditionalOperation:
+                     logicalTerm CONDITION_OP logicalTerm
+                    | conditionalOperation CONDITION_OP logicalTerm
+                    | conditionalOperation CONDITION_OP conditionalOperation;
 
 logicalTerm: logicalFactor
             | logicalTerm OR logicalFactor
