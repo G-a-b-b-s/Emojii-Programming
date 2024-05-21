@@ -1,0 +1,4 @@
+def add_numbers(a,b):
+	print(a + b)
+print("statement")
+add_numbers(3, 4)
