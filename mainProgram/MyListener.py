@@ -80,7 +80,6 @@ class MyListener(GrammarListener):
     def exitPrint_stmt(self, ctx: GrammarParser.GrammarParser.Print_stmtContext):
         print("Po princie")
         self.output_buffer.append(")\n")
-        print("3")
 
     def enterArithmeticOperation(self, ctx: GrammarParser.GrammarParser.ArithmeticOperationContext):
          print("artimh op")
@@ -173,11 +172,12 @@ class MyListener(GrammarListener):
         #print(output)
         return output
     def enterValue(self, ctx: GrammarParser.GrammarParser.ValueContext):
-         value_token = ctx.getText()
-         print("w value: ",value_token)
-         if value_token in self.tokens_map.keys():
-            mapped_value = self.tokens_map.get(value_token, value_token)
-            #self.output_buffer.append(mapped_value)
+         print("w value: ")
+         parent_ctx_type = type(ctx.parentCtx).__name__
+         print(f"Rodzaj kontekstu nadrzędnego: {parent_ctx_type}")
+         if not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.FactorContext) and not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.LogicalPrimaryContext):
+             value_token = ctx.getText()
+             self.output_buffer.append(value_token)
 
 
     # def enterEveryRule(self, ctx: ParserRuleContext):
