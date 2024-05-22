@@ -1,4 +1,3 @@
-
 from Compiler import GrammarParser
 from Compiler.GrammarListener import GrammarListener
 
@@ -7,6 +6,7 @@ class MyListener(GrammarListener):
     def __init__(self, output_file=None):
         self.output_file = output_file
         self.output_buffer = []
+        self.indent_level = 0
         self.tokens_map ={
 
             ':heavy_plus_sign:': '+',
@@ -60,9 +60,10 @@ class MyListener(GrammarListener):
             'as': 'as'
         }
 
+
     def enterFor_stmt(self, ctx: GrammarParser.GrammarParser.For_stmtContext):
         identifier = ctx.IDENTIFIER().getText()
-        range_values = ctx.NUMBER()  # Pobieramy listę wszystkich numerów w zakresie
+        range_values = ctx.exp_list().exp()  # Pobieramy listę wszystkich numerów w zakresie
 
         # Sprawdzamy, czy drugi numer istnieje
         if len(range_values) == 2:
@@ -72,15 +73,19 @@ class MyListener(GrammarListener):
         else:
             start = range_values[0].getText()  # Pierwszy numer to początek zakresu
             range_str = start
-
-        self.output_buffer.append(f"for {identifier} in range({range_str}):\n\t")
-
+        indent = '\t' * self.indent_level
+        self.output_buffer.append(f"{indent}for {identifier} in range({range_str}):\n")
+        self.indent_level += 1
+    def exitFor_stmt(self, ctx:GrammarParser.GrammarParser.For_stmtContext):
+        self.indent_level-=1
     def enterPrint_stmt(self, ctx:GrammarParser.GrammarParser.Print_stmtContext):
         print("print_stmt")
-        self.output_buffer.append("print(")
+        indent = '\t' * self.indent_level
+        self.output_buffer.append(f"{indent}print(")
 
     def enterPrintOperation(self, ctx: GrammarParser.GrammarParser.PrintOperationContext):
         print("W princie")
+        print(self.output_buffer)
         if ctx.STRING() and ctx.exp():
             string = ctx.STRING().getText()
             expression = ctx.exp().getText()
@@ -94,7 +99,9 @@ class MyListener(GrammarListener):
     def enterAssignment_stmt(self, ctx: GrammarParser.GrammarParser.Assignment_stmtContext):
         identifier = ctx.IDENTIFIER().getText()
         expression = ctx.exp().getText()
-        self.output_buffer.append(f"{identifier} = ")
+        indent = '\t' * self.indent_level
+        # Check if the previous token was also '='
+        self.output_buffer.append(f"{indent}{identifier} = ")
 
     def exitAssignment_stmt(self, ctx: GrammarParser.GrammarParser.Assignment_stmtContext):
         self.output_buffer.append("\n")
@@ -121,17 +128,23 @@ class MyListener(GrammarListener):
             # print("prawy: ",right)
             # print(f"{left} {operator_mapping.get(operator, operator)} {right}")
             print(f"DODAJE: {left} {operator_mapping.get(operator, operator)} {right}")
+            indent = '\t' * self.indent_level
             self.output_buffer.append(f"{left} {operator_mapping.get(operator, operator)} {right}")
 
     def enterWhile_stmt(self, ctx: GrammarParser.GrammarParser.While_stmtContext):
         print("while stmst")
         condition = ctx.getChild(2).getText()  # Pobierz warunek z 3. dziecka kontekstu (conditionalOperation)
         self.output_buffer.append(f"while {condition}:\n\t")
-        print(f"DODAJE: while {condition}:\n\t")
-
+        indent = '\t' * self.indent_level
+        print(f"DODAJE: {indent} while {condition}:\n\t")
+        self.indent_level += 1
+    def exitWhile_stmt(self, ctx:GrammarParser.GrammarParser.While_stmtContext):
+        self.indent_level-=1
     def enterIf_stmt(self, ctx: GrammarParser.GrammarParser.If_stmtContext):
         print("W ifie")
-        self.output_buffer.append("if ")
+        indent = '\t' * self.indent_level
+        self.output_buffer.append(f"{indent}if ")
+        self.indent_level += 1
 
     def enterExp(self, ctx: GrammarParser.GrammarParser.ExpContext):
         print("w expression")
@@ -141,21 +154,33 @@ class MyListener(GrammarListener):
                     ctx.getChild(0), GrammarParser.GrammarParser.ConditionalOperationContext) and not isinstance(
                     ctx.getChild(0), GrammarParser.GrammarParser.ValueContext):
                 print(f"DODAJE: {ctx.getText()}")
-                self.output_buffer.append(ctx.getText())
+                self.output_buffer.append(f"{ctx.getText()}")
+                print(self.output_buffer)
     def exitIf_stmt(self, ctx: GrammarParser.GrammarParser.If_stmtContext):
+        self.indent_level -= 1
+        print("po ifie")
         self.output_buffer.append("\n")
 
     def enterElif_stmt(self, ctx: GrammarParser.GrammarParser.Elif_stmtContext):
+        self.indent_level -= 1
+        indent= '\t' * self.indent_level
         print("elif stmst:")
-        self.output_buffer.append("elif ")
+        self.output_buffer.append(f"{indent}elif ")
+        self.indent_level += 1
 
     def exitElif_stmt(self, ctx: GrammarParser.GrammarParser.Elif_stmtContext):
+        self.indent_level -= 1
         print("w exit elif")
         self.output_buffer.append("\n")
 
     def enterElse_stmt(self, ctx: GrammarParser.GrammarParser.Else_stmtContext):
         print('else stmt')
-        self.output_buffer.append("else:\n\t")
+        self.indent_level -= 1
+        indent = '\t' * self.indent_level
+        self.output_buffer.append(f"{indent}else:\n")
+        self.indent_level += 1
+    def exitElse_stmt(self, ctx:GrammarParser.GrammarParser.Else_stmtContext):
+        self.indent_level-=1
     def enterConditionalOperation(self, ctx: GrammarParser.GrammarParser.ConditionalOperationContext):
         print("conditional op")
         text = ctx.getText().split(":")
@@ -168,15 +193,20 @@ class MyListener(GrammarListener):
                 output += self.tokens_map[token]
             else:
                 output += v
+        if '= =' in output:
+            output = output.replace('= =', '==')
         print(f"DODAJE: {output}:\n\t")
-        self.output_buffer.append(output+":\n\t")
+        self.output_buffer.append(f"{output} :\n")
 
     def enterFunction_def(self, ctx):
         print("w def ")
         func_name = ctx.getChild(1).getText()
         params = self.params(ctx,3)
-        self.output_buffer.append(f"def {func_name}({params}):\n\t")
-
+        indent = '\t' * self.indent_level
+        self.output_buffer.append(f"{indent}def {func_name}({params}):\n")
+        self.indent_level += 1
+    def exitFunction_def(self, ctx):
+        self.indent_level -= 1
     def enterFunction_call(self, ctx: GrammarParser.GrammarParser.Function_callContext):
         print("funcion call")
         function_name = ctx.IDENTIFIER().getText()
@@ -191,7 +221,8 @@ class MyListener(GrammarListener):
 
         mapped_args = ", ".join(arguments)  # Łączy argumenty funkcji jako stringi
         print(f"DODAJE: {function_name}({mapped_args})\n")
-        self.output_buffer.append(f"{function_name}({mapped_args})\n")
+        indent = '\t' * self.indent_level
+        self.output_buffer.append(f"{indent}{function_name}({mapped_args})\n")
 
     def params(self,ctx, number):
         #print("w params")
@@ -209,22 +240,16 @@ class MyListener(GrammarListener):
         return output
     def enterValue(self, ctx: GrammarParser.GrammarParser.ValueContext):
          print("w value: ")
-         parent_ctx_type = type(ctx.parentCtx).__name__
-         print(f"Rodzaj kontekstu nadrzędnego: {parent_ctx_type}")
-         if not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.FactorContext) and not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.LogicalPrimaryContext) and not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.PrintOperationContext):
+         if not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.FactorContext) and not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.LogicalPrimaryContext) and not isinstance(ctx.parentCtx, GrammarParser.GrammarParser.PrintOperationContext)\
+                 and self.output_buffer[-1][-2]!=':':
              value_token = ctx.getText()
              print(f"DODAJE: {value_token}")
              self.output_buffer.append(value_token)
 
-
-    # def enterEveryRule(self, ctx: ParserRuleContext):
-    #     for i in range(ctx.getChildCount()):
-    #         child = ctx.getChild(i)
-    #         if isinstance(child, TerminalNodeImpl):
-    #             token_text = child.getText()
-    #             mapped_value = self.tokens_map.get(token_text, token_text)
-    #             self.output_buffer.append(mapped_value)
-
+    def enterReturn_stmt(self, ctx: GrammarParser.GrammarParser.Return_stmtContext):
+        print("w returnie")
+        indent = '\t' * self.indent_level  # Calculate current indentation
+        self.output_buffer.append(f"{indent}return\n")
     def save_output(self):
         with open(self.output_file, "w") as file:
             file.write("".join(self.output_buffer))
