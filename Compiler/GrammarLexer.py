@@ -1,4 +1,4 @@
-# Generated from C:/Users/48735/Desktop/Kompilki/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
+# Generated from C:/Users/martyna/PycharmProjects/teoriaKompilatorow/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
 from antlr4 import *
 from io import StringIO
 import sys

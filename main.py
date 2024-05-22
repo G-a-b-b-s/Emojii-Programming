@@ -18,7 +18,7 @@ def print_tokens(lexer):
         used_token_types.append(lexer.symbolicNames[token.type])
     lexer.reset()
     tokens_string = '\n'.join(tokens)
-    with open('./Results/tokens.txt', 'w', encoding='utf-8') as file:
+    with open('Results/tokens.txt', 'w', encoding='utf-8') as file:
         file.write(tokens_string)
 
 
@@ -55,9 +55,9 @@ def main():
     walker.walk(listener, tree)
     walker.walk(printer, tree)
     formatted_tree = printer.getFormattedTree()
-    with open('Results/parsing_tree.txt', 'w', encoding='utf-8') as file:
+    with open('Results/1/parsing_tree.txt', 'w', encoding='utf-8') as file:
         file.write(formatted_tree)
-    printer.saveGraph('Results/6/dot_parsing_tree')
+    printer.saveGraph('Results/1/dot_parsing_tree')
 
     #Listener
     listener.save_output()

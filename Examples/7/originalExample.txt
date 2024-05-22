@@ -1,0 +1,12 @@
+💡 calculate_factorial 🌜 n 🌛 🖇️
+    ❓ 🌜 n 🟰 🟰 0 🌛 🖇️
+        🖨️ 🌜 "Factorial of 0 is 1" 🌛
+        🪃
+
+    result 🟰 1
+    🎁 i 📭 range 🌜 1, n ➕ 1 🌛 🖇️
+        result 🟰 result ✖️ i
+
+    🖨️ 🌜 "Factorial is " 📎 result 🌛
+
+calculate_factorial 🌜 5 🌛

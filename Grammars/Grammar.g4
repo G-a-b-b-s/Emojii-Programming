@@ -70,7 +70,7 @@ CONDITION_OP : '>' | '>=' | '<' | '<=' | '= =' | '!=';
 
 // Statements within line
 stmt: (simple_stmt | compound_stmt);
-simple_stmt: assignment_stmt | import_stmt |try_stmt | declare_stmt | print_stmt | multiple_assignment_stmt |function_call | exp | exp COLON;
+simple_stmt: assignment_stmt | import_stmt |try_stmt | declare_stmt | print_stmt | multiple_assignment_stmt |function_call | exp | exp COLON | exp_list;
 
 assignment_stmt: IDENTIFIER EQUAL exp;
 

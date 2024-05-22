@@ -27,6 +27,31 @@ start
                               value
                     return_stmt
             stmt
+              compound_stmt
+                if_stmt
+                  conditionalOperation
+                    logicalTerm
+                      logicalFactor
+                        logicalPrimary
+                          value
+                    logicalTerm
+                      logicalFactor
+                        logicalPrimary
+                          value
+                  func_body
+                    loop_stmt
+                      stmt
+                        simple_stmt
+                          print_stmt
+                            exp
+                              value
+                    return_stmt
+            stmt
+              simple_stmt
+                assignment_stmt
+                  exp
+                    value
+            stmt
               simple_stmt
                 assignment_stmt
                   exp
@@ -52,12 +77,30 @@ start
                         assignment_stmt
                           exp
                             arithmeticOperation
-                              term
+                              arithmeticOperation
                                 term
                                   factor
                                     value
+                              term
                                 factor
                                   value
+                    stmt
+                      simple_stmt
+                        assignment_stmt
+                          exp
+                            value
+                    stmt
+                      simple_stmt
+                        assignment_stmt
+                          exp
+                            value
+                    stmt
+                      simple_stmt
+                        print_stmt
+                          exp
+                            printOperation
+                              exp
+                                value
                     stmt
                       simple_stmt
                         print_stmt
