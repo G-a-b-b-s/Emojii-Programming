@@ -1,4 +1,4 @@
-# Generated from C:/Users/martyna/PycharmProjects/teoriaKompilatorow/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
+# Generated from C:/Users/48735/Desktop/Kompilki/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .GrammarParser import GrammarParser
@@ -257,6 +257,15 @@ class GrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by GrammarParser#function_call.
     def exitFunction_call(self, ctx:GrammarParser.Function_callContext):
+        pass
+
+
+    # Enter a parse tree produced by GrammarParser#exp_list.
+    def enterExp_list(self, ctx:GrammarParser.Exp_listContext):
+        pass
+
+    # Exit a parse tree produced by GrammarParser#exp_list.
+    def exitExp_list(self, ctx:GrammarParser.Exp_listContext):
         pass
 
 

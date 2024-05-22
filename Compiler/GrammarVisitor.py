@@ -1,4 +1,4 @@
-# Generated from C:/Users/martyna/PycharmProjects/teoriaKompilatorow/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
+# Generated from C:/Users/48735/Desktop/Kompilki/Emojii-Programming/Grammars/Grammar.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .GrammarParser import GrammarParser
@@ -146,6 +146,11 @@ class GrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by GrammarParser#function_call.
     def visitFunction_call(self, ctx:GrammarParser.Function_callContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by GrammarParser#exp_list.
+    def visitExp_list(self, ctx:GrammarParser.Exp_listContext):
         return self.visitChildren(ctx)
 
 
