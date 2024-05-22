@@ -65,7 +65,7 @@ IDENTIFIER  : [A-Za-z]+[A-Za-z0-9_]*;
 NUMBER : [0-9]+('.'[0-9]+)?;
 STRING : '"' (~["])* '"';
 
-CONDITION_OP : '>' | '>=' | '<' | '<=' | '==' | '!=';
+CONDITION_OP : '>' | '>=' | '<' | '<=' | '= =' | '!=';
 
 
 // Statements within line
@@ -78,7 +78,7 @@ declare_stmt: DECL single_declaration (COMMA single_declaration)*;
 
 single_declaration: IDENTIFIER (EQUAL exp)?;
 
-//declare_stmt: DECL (IDENTIFIER | multiple_assignment_stmt) (COMMA (multiple_assignment_stmt | IDENTIFIER))*;
+
 import_stmt: IMPORT module_name;
 from_stmt: FROM module_name IMPORT import_list;
 module_name: IDENTIFIER (COMMA IDENTIFIER)*;
@@ -98,19 +98,19 @@ if_stmt: IF LPAR conditionalOperation RPAR COLON func_body (elif_stmt)* (else_st
 elif_stmt: ELIF LPAR conditionalOperation RPAR COLON func_body;
 else_stmt: ELSE COLON func_body;
 while_stmt: WHILE LPAR conditionalOperation RPAR COLON WS loop_stmt;
-for_stmt: FOR IDENTIFIER IN RANGE LPAR NUMBER (COLON NUMBER)* RPAR COLON (WS)* loop_stmt;
-function_def: DEF IDENTIFIER LPAR parameters? RPAR COLON WS func_body;
+for_stmt: FOR IDENTIFIER IN RANGE LPAR exp_list RPAR COLON (WS)* loop_stmt;
+function_def: DEF IDENTIFIER LPAR parameters? RPAR COLON WS* func_body;
 
 parameters: typed_par (COMMA typed_par)*;
 typed_par: IDENTIFIER | NUMBER;
 function_call : IDENTIFIER LPAR parameters? RPAR ;
-
+exp_list: exp (COMMA exp)*;
 
 // Fillings for compound statements
 loop_stmt: (stmt | flow_stmt)+;
-func_body: loop_stmt | return_stmt;
+func_body: (loop_stmt)* return_stmt?;
 flow_stmt: (BREAK | CONTINUE) WS;
-return_stmt: RETURN (explist)? WS;
+return_stmt: RETURN (explist| WS)?;
 explist: exp (COMMA exp);
 
 
