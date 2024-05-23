@@ -30,8 +30,64 @@ Celem tego projektu jest stworzenie interpretera języka emotikonowego, który s
 ```
 ## Użytkowanie
 ## 1. Identyfikacja Tokenów
-
-
+```
+    "IDENTIFIER" : "[A-Za-z]+[A-za-z0-9]*",              # Identifiers (variables, function names, etc.)
+    "NUMBER"     : "[0-9]+{.}?[0-9]+",                   # Numeric literals
+    "STRING"     : "️ " [A-za-z0-9-_\]" ",                # String literals
+    "NEWLINE"    : "🗽",                                 # Newline tokens
+    "PLUS"       : "➕",                                 # Addition operator
+    "MINUS"      : "➖",                                 # Subtraction operator
+    "MULTIPLY"   : "✖️",                                 # Multiplication operator
+    "DIVIDE"     : "➗",                                 # Division operator
+    "EQUAL"      : "🟰",                                 # Assignment operator
+    "GREATER"    : "🐉",                                 # Greater operator
+    "SMALLER"    : "🐁",                                 # Smaller operator
+    "EGREATER"   : "🐆",                                 # GreaterOrEqual operator
+    "ESMALLER"   : "🐿️",                                 # SmallerOrEqual operator
+    "MOD"        : "%",                                   # Modulo
+    "LPAR"       : "🌜",                                 # Left parenthesis
+    "RPAR"       : "🌛",                                 # Right parenthesis
+    "LSQB"       : "🫲",                                 # Left square bracket
+    "RSQB"       : "🫱",                                 # Right square bracket
+    "COMMA"      : "📎",                                 # Comma
+    "COLON"      : "🖇️",                                 # Colon
+    "SEMI"       : "📌",                                 # Semicolon
+    "QUOTE"      : "🎬 "                                 # Quote
+    "WS"         : "[ \t\r\n]+",                         # Whitespace
+    "OR"         : "🕵️‍♀️",                                 # Or (|| in other programming languages)
+    "AND"        : "👭",                                 # And (&& in other programming languages)
+    "PERCENT"    : "🍾",                                 # Percent (%)
+    "COMMENT"    : "☁️[A-Za-z0-9_/-*]*☁️",               # Commment
+    "PRINT"      : "🖨️",                                 # Print
+    "NOT"        : "❗",                                 # Not
+    "IF"         : "❓",                                 # If
+    "ELSE"       : "❗❗",                               # Else
+    "ELSIF"      : "❓❗",                               # Elsif
+    "FOR"        : "🎁",                                 # For
+    "IN"         : "📭",                                 # In
+    "RANGE"      : "🏔️",                                 # Range
+    "ENUMERATE"  : "📻",                                 # Enumerate
+    "WHILE"      : "🌪️",                                 # While
+    "SWITCH"     : "📋",                                 # Switch
+    "CASE"       : "✅",                                 # Case
+    "BREAK"      : "🚦",                                 # Break
+    "CONTINUE"   : "💆",                                 # Continue
+    "RETURN"     : "🪃",                                 # Return
+    "DEF"        : "💡",                                 # Def
+    "TRUE"       : "👍",                                 # True
+    "FALSE       : "👎",                                 # False
+    "TRY"        : "🔮",                                 # Try
+    "CATCH"      : "🎣",                                 # Catch
+    "FINALLY"    : "⌛",                                 # Finally
+    "RAISE"      : "🌅",                                 # Raise
+    "CONST"      : "💀",                                 # Constant
+    "IMPORT"     : "🌎",                                 # Import
+    "FROM"       : "🚛",                                 # From
+    "LAMBDA"     : "🌈",                                 # Lambda
+    "NONE"       : "🗑️",                                 # None
+    "ECOMPLEMENT": "〰",                                  # Complement
+    "ARROW"      : "->",                                  # Arrow
+```
 
 ## 2. Gramatyka:
 
