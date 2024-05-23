@@ -1,4 +1,4 @@
-# Interpreter Języka Emotikonów
+# ✨ Kompilator Języka Emotikonów ✨
 
 Celem tego projektu jest stworzenie interpretera języka emotikonowego, który służyłby dzieciom do łatwej nauki programowania w prosty i angażujący sposób. Emotikony są językiem XXI wieku, dlatego uważamy że dzieciom zdecydowanie ułatwi to zrozumienie logiki programowania. 
 - Rodzaj translatora: Kompilator
