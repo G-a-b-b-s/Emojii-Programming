@@ -60,7 +60,11 @@ Zidentyfikowane tokeny zostaną zapisane do pliku tokens.txt.
 
 -**Drzewo Parsowania**:
 
-Wynik analizy składniowej (drzewo parsowania) zostanie zapisany w diretory Results, a dokładniej do pliku parsing_tree.txt, natomiast wersja png - w pliku 'dot parsing tree'.
+Wynik analizy składniowej (drzewo parsowania) zostanie zapisany w diretory Results, a dokładniej do pliku parsing_tree.txt, natomiast wersja png - w pliku 'dot parsing tree'. 
+
+-**Kod wykonywalny**:
+
+Wykonywalny kod przetłumaczony z emotikonowego języka programowania znajduje się w katalogu Results
 
 -**Edycja Pliku Testowego**:
 
