@@ -103,7 +103,6 @@ class EmojiTranslatorGUI:
 
     def execute_code(self, code):
         with tempfile.NamedTemporaryFile(delete=False, suffix=".py") as temp_file:
-            print(code.encode())
             temp_file.write(code.encode())
             temp_file_path = temp_file.name
 
@@ -115,6 +114,7 @@ class EmojiTranslatorGUI:
         except Exception as e:
             self.execution_text.insert("1.0", str(e))
         finally:
+            print(self.execution_text.get("1.0", END))
             print(f"Tymczasowy plik został zapisany pod ścieżką: {temp_file_path}")
 
     def signalize_errors(self, errors):
@@ -123,7 +123,7 @@ class EmojiTranslatorGUI:
             start_pos = f"{line}.{column - 1}"
             end_pos = f"{line}.{column}"
             self.input_text.tag_add("error", start_pos, end_pos)
-
+            self.execution_text.insert("1.0", f"Error at line {line-1}: {msg}\n")
 
 if __name__ == "__main__":
     root = Tk()

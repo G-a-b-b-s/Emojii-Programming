@@ -31,7 +31,7 @@ class EmojiReader:
         """
         self.path = path
 
-    def read(self, path="C:\\Users\\martyna\\PycharmProjects\\teoriaKompilatorow\\Emojii-Programming\\EmojiHandler\\emojiList"):
+    def read(self, path="../EmojiHandler/emojiList"):
         """
         Reads the content of the file at the given path.
 
